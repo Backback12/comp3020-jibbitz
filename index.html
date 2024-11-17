@@ -14,7 +14,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">Jibbitz</a>
             <div class="d-flex align-items-center">
-                <a href="cart/cart.html" class="position-relative me-4 text-decoration-none text-dark">
+                <a href="cart/" class="position-relative me-4 text-decoration-none text-dark">
                     <i class="fas fa-shopping-cart fa-lg"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
@@ -27,8 +27,12 @@
 
     <!-- Search Bar -->
     <div class="search-container">
-        <div class="container">
-            <div class="input-group mb-3">
+        <div class="container d-flex">
+          <button class="btn btn-primary m-2" type="button" data-bs-toggle="collapse" data-bs-target="#filtersMenu">
+            <i class="fas fa-list fa-md"></i>
+          </button>
+
+            <div class="input-group m-2">
                 <span class="input-group-text">
                     <i class="fas fa-search"></i>
                 </span>
@@ -38,8 +42,24 @@
     </div>
 
     <!-- Product Grid -->
-    <div class="container mt-4">
-        <div class="row" id="productGrid">
+    
+
+    <div class="container mt-4 d-flex">
+        
+        
+        
+        <div class="collapse collapse-horizontal" id="filtersMenu">
+          <div class="card card-body mx-3" style="width: 300px;">
+            Filters Menu...
+            <ul>
+              <li>Colour</li>
+              <li>Name</li>
+              <li>Price</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="row flex-grow-1" id="productGrid">
             <!-- Product cards will be generated here -->
         </div>
     </div>
