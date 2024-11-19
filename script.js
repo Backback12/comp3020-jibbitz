@@ -25,13 +25,14 @@ const products = [
   }
 ];
 
+//added in background colour for product cards-Shana
 function generateProductGrid() {
   const productGrid = document.getElementById('productGrid');
   if (!productGrid) return;
 
   productGrid.innerHTML = products.map(product => `
       <div class="col-md-3">
-          <div class="product-card">
+          <div class="product-card" style="background-color: #f8f9fa;">
               <div id="carousel-${product.id}" class="carousel slide">
                   <div class="carousel-inner">
                       ${product.images.map((img, index) => `

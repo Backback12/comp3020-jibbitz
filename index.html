@@ -44,18 +44,87 @@
     <!-- Product Grid -->
     
 
-    <div class="container mt-4 d-flex">
-        
-        
-        
-        <div class="collapse collapse-horizontal" id="filtersMenu">
+    <div class="container mt-4 d-flex">  
+        <!--Had to change class name to make work with css-->
+        <div class="collapse-horizontal" id="filtersMenu">
           <div class="card card-body mx-3" style="width: 300px;">
-            Filters Menu...
-            <ul>
-              <li>Colour</li>
-              <li>Name</li>
-              <li>Price</li>
-            </ul>
+            Filters
+            <!--Create functional dropdown for colours-->
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropDownMenuButtonColour" data-bs-toggle="collapse" data-bs-target="#colourDropdown" aria-expanded="false">
+                    Colours
+                </button>
+                <div id="colourDropdown" class="collapse">
+                    <div class="checkForm d-flex flex-column" id="colourForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox1">
+                            <label class="form-check-label" for="colour-checkbox1">
+                                Red
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox2">
+                            <label class="form-check-label" for="colour-checkbox2">
+                                Orange
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox3">
+                            <label class="form-check-label" for="colour-checkbox3">
+                                Yellow
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox4">
+                            <label class="form-check-label" for="colour-checkbox4">
+                                Green
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox5">
+                            <label class="form-check-label" for="colour-checkbox5">
+                                Blue
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox6">
+                            <label class="form-check-label" for="colour-checkbox6">
+                                Purple
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="colour-checkbox7">
+                            <label class="form-check-label" for="colour-checkbox7">
+                                Multicoloured
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Create functional dropdown for price-->
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropDownMenuButtonPrice" data-bs-toggle="collapse" data-bs-target="#priceDropdown" aria-expanded="false">
+                    Price
+                </button>
+                <div id="priceDropdown" class="collapse">
+                    <div class="checkForm d-flex flex-column" id="priceForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="price-checkbox1">
+                            <label class="form-check-label" for="price-checkbox1">
+                                Under $5
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="price-checkbox2">
+                            <label class="form-check-label" for="price-checkbox2">
+                                $5+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
           </div>
         </div>
         
