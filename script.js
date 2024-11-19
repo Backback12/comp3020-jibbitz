@@ -3,25 +3,25 @@ const products = [
       id: 1,
       name: "Rainbow Jibbitz",
       price: 4.99,
-      images: ["na", "na"]
+      images: ["/Jibbitz_Rainbow/rainbowJibbit.png", "/Jibbitz_Rainbow/rainbowOnCroc.png"]
   },
   {
       id: 2,
       name: "Star Jibbitz",
       price: 3.99,
-      images: ["na", "na"]
+      images: ["/Jibbitz_Star/starJibbit.png", "/Jibbitz_Star/starOnCroc.png"]
   },
   {
       id: 3,
       name: "Heart Jibbitz",
       price: 4.49,
-      images: ["na", "na"]
+      images: ["/Jibbitz_Heart/heartJibbit.png", "/Jibbitz_Heart/heartOnCroc.png"]
   },
   {
       id: 4,
       name: "Flower Jibbitz",
       price: 3.99,
-      images: ["na", "na"]
+      images: ["/Jibbitz_Flower/flowerJibbit.png", "/Jibbitz_Flower/flowerOnCroc.png"]
   }
 ];
 
