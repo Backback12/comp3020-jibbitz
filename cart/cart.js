@@ -161,8 +161,9 @@ function checkout() {
         return;
     }
     
- 
-    alert('Proceeding to checkout...');
+    clearCart();
+    //alert('Proceeding to checkout...');
+    
 }
 
 
@@ -171,3 +172,17 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
     generateCartItems();
 });
+
+function clearCart() {
+    // Clear the cart array
+    cart = [];
+    
+    // Re-generate the cart items (which will show the empty cart message)
+    generateCartItems();
+    
+    // Update the cart count to show 0
+    updateCartCount();
+    
+    // Optionally, show a notification that the cart was cleared
+    showNotification('Your cart has been cleared');
+}
