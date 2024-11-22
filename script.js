@@ -132,6 +132,7 @@ function showNotification(message) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  updateProfileUI();
   generateProductGrid();
   updateCartCount();
 
@@ -196,6 +197,20 @@ function setLoggedInState(state, username) {
 
 function getUsername() {
     return localStorage.getItem('username');
+}
+
+// Update profile image based on login state
+function updateProfileUI() {
+    const defaultProfilePic = "images/defaultProfileIcon.png";
+    const loggedInProfilePic = "images/loggedInProfile.jpg";
+    const profileIcon = document.querySelector('#profile img');
+    if (!profileIcon) return;
+
+    if (isLoggedIn()) {
+        profileIcon.src = loggedInProfilePic;
+    } else {
+        profileIcon.src = defaultProfilePic;
+    }
 }
 
 // Login Popup
