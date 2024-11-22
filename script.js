@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //added this
   attachFilterListeners();
+  login();
 });
 
 //TRYING TO MAKE THE FILTERS CHANGE THE PRODUCTS DISPLAYING-SHANA
@@ -176,4 +177,43 @@ function attachFilterListeners() {
     filterCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', handleFilters);
     });
+}
+
+function loginPopup(){   
+    //form to login
+     const loginFormHTML = `
+         <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered">
+                 <div class="modal-content">
+                     <div class="modal-header">
+                         <h5 class="modal-title">Login</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                     </div>
+                     <div class="modal-body">
+                         <form>
+                             <div class="mb-3">
+                                 <label for="username" class="form-label">Username</label>
+                                 <input type="text" id="username" class="form-control">
+                             </div>
+                             <div class="mb-3">
+                                 <label for="password" class="form-label">Password</label>
+                                 <input type="password" id="password" class="form-control">
+                             </div>
+                             <button type="submit" class="btn btn-primary">Login</button>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </div>`;
+     document.body.insertAdjacentHTML('beforeend', loginFormHTML);
+     const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+     loginModal.show();
+}
+
+//profile JS
+function login(){
+    const profile = document.getElementById('profile');
+    if (profile) {
+        profile.addEventListener('click', loginPopup);
+    }
 }

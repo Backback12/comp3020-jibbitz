@@ -177,6 +177,8 @@ function clearCart() {
     // Clear the cart array
     cart = [];
     
+    localStorage.removeItem('cart');
+    
     // Re-generate the cart items (which will show the empty cart message)
     generateCartItems();
     
