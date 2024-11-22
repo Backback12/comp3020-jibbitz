@@ -179,35 +179,101 @@ function attachFilterListeners() {
     });
 }
 
-function loginPopup(){   
-    //form to login
-     const loginFormHTML = `
-         <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-             <div class="modal-dialog modal-dialog-centered">
-                 <div class="modal-content">
-                     <div class="modal-header">
-                         <h5 class="modal-title">Login</h5>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                     </div>
-                     <div class="modal-body">
-                         <form>
-                             <div class="mb-3">
-                                 <label for="username" class="form-label">Username</label>
-                                 <input type="text" id="username" class="form-control">
-                             </div>
-                             <div class="mb-3">
-                                 <label for="password" class="form-label">Password</label>
-                                 <input type="password" id="password" class="form-control">
-                             </div>
-                             <button type="submit" class="btn btn-primary">Login</button>
-                         </form>
-                     </div>
-                 </div>
-             </div>
-         </div>`;
-     document.body.insertAdjacentHTML('beforeend', loginFormHTML);
-     const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-     loginModal.show();
+// Login state management
+function isLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === 'true';
+}
+
+//IMPORTANT NOTE: THIS IS HOW WE KEEP TRACK OF IF WE ARE LOGGED IN OR NOT
+function setLoggedInState(state, username) {
+    localStorage.setItem('isLoggedIn', state);
+    if (state && username) {
+        localStorage.setItem('username', username);
+    } else {
+        localStorage.removeItem('username');
+    }
+}
+
+function getUsername() {
+    return localStorage.getItem('username');
+}
+
+// Login Popup
+function loginPopup() {
+    if (!isLoggedIn()) {
+        // Display login form if not logged in
+        const loginFormHTML = `
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" id="username" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML('beforeend', loginFormHTML);
+
+        const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Perform login logic here (e.g., validate credentials)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) { // Simple validation
+                setLoggedInState(true,username);
+                loginModal.hide();
+                updateProfileUI();
+            } else {
+                alert('Please enter valid credentials.');
+            }
+        });
+    } else {
+        const username = getUsername();
+        // Display logout confirmation if logged in
+        const logoutHTML = `
+            <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Profile Information</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                            <h2><strong>${username}</strong></h2>
+                            <button class="btn btn-danger" id="confirmLogout">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML('beforeend', logoutHTML);
+
+        const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+        logoutModal.show();
+
+        document.getElementById('confirmLogout').addEventListener('click', () => {
+            setLoggedInState(false);
+            logoutModal.hide();
+            updateProfileUI();
+        });
+    }
 }
 
 //profile JS
