@@ -6,6 +6,7 @@
     <title>Jibbitz - Customize Your Crocs</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +15,7 @@
         <div class="container">
             <a class="navbar-brand" href="/">Jibbitz</a>
             <div class="d-flex align-items-center">
-                <a href="cart/" class="position-relative me-4 text-decoration-none text-dark">
+                <a href="/cart/" class="position-relative me-4 text-decoration-none text-dark">
                     <i class="fas fa-shopping-cart fa-lg"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
@@ -28,18 +29,82 @@
     <!-- Product Grid -->
     
 
-    <div class="container mt-4 d-flex">  
+    <div class="container mt-4 d-flex flex-column">  
         <!--Had to change class name to make work with css-->
         
         
-        <div class="row flex-grow-1" id="productGrid">
-            <!-- Product cards will be generated here -->
+        <!-- <div class="row bg-dark" id="productGrid">
+            
              <div class="bg-dark">
                 
              </div>
+        </div> -->
+        <div class="d-flex">
+            <div class="card p-4" style="min-width: 300px; max-width: 400px;">
+                <!-- left title & info -->
+                <h1>Flowrr</h1>
+                <h4>$0.99</h4>
+                <a>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                </a>
+            </div>
+            <div class="card d-flex align-items-center flex-grow-1">
+                <!-- image preview -->
+                <img src="/Jibbitz_Flower/flowerJibbit.png" style="max-width: 500px;">
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Buttons -->
+    <div>
+
+    </div>
+
+
+
+    <!-- Reviews -->
+    <div class="overflow-scroll p-5">
+        <div class="">
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            <div class="card m-2 p-1">
+                <a>John Doe</a>
+                <p>This was awesome</p>
+            </div>
+            
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+    </script>
 </body>
 </html>
