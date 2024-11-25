@@ -82,3 +82,9 @@ body{
   font-weight: bold;
   color: #333;
 }
+
+
+
+.clickable {
+  cursor: pointer;
+}

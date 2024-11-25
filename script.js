@@ -1,33 +1,38 @@
 const products = [
-  {
-      id: 1,
-      name: "Rainbow Jibbitz",
-      price: 4.99,
-      images: ["/Jibbitz_Rainbow/rainbowJibbit.png", "/Jibbitz_Rainbow/rainbowOnCroc.png"],
-      colour: "Multicoloured"
-  },
-  {
-      id: 2,
-      name: "Star Jibbitz",
-      price: 3.99,
-      images: ["/Jibbitz_Star/starJibbit.png", "/Jibbitz_Star/starOnCroc.png"],
-      colour: "Yellow"
-  },
-  {
-      id: 3,
-      name: "Heart Jibbitz",
-      price: 4.49,
-      images: ["/Jibbitz_Heart/heartJibbit.png", "/Jibbitz_Heart/heartOnCroc.png"],
-      colour: "Red"
-  },
-  {
-      id: 4,
-      name: "Flower Jibbitz",
-      price: 3.99,
-      images: ["/Jibbitz_Flower/flowerJibbit.png", "/Jibbitz_Flower/flowerOnCroc.png"],
-      colour: "Pink"
-  }
-];
+    {
+        id: 1,
+        name: "Rainbow Jibbitz",
+        price: 4.99,
+        images: ["/Jibbitz_Rainbow/rainbowJibbit.png", "/Jibbitz_Rainbow/rainbowOnCroc.png"],
+        colour: "Multicoloured",
+        rating: 9
+    },
+    {
+        id: 2,
+        name: "Star Jibbitz",
+        price: 3.99,
+        images: ["/Jibbitz_Star/starJibbit.png", "/Jibbitz_Star/starOnCroc.png"],
+        colour: "Yellow",
+        rating: 8
+    },
+    {
+        id: 3,
+        name: "Heart Jibbitz",
+        price: 4.49,
+        images: ["/Jibbitz_Heart/heartJibbit.png", "/Jibbitz_Heart/heartOnCroc.png"],
+        colour: "Red",
+        rating: 10
+    },
+    {
+        id: 4,
+        name: "Flower Jibbitz",
+        price: 3.99,
+        images: ["/Jibbitz_Flower/flowerJibbit.png", "/Jibbitz_Flower/flowerOnCroc.png"],
+        colour: "Pink",
+        rating: 9
+    }
+  ];
+window.products = products;
 
 //added in background colour for product cards-Shana
 function generateProductGrid() {
@@ -35,7 +40,7 @@ function generateProductGrid() {
   if (!productGrid) return;
 
   productGrid.innerHTML = products.map(product => `
-      <div class="col-md-3" data-colour="${product.colour}">
+      <div class="col-md-3 clickable" onclick="linkToProduct(event, ${ product.id })" data-colour="${product.colour}">
           <div class="product-card" style="background-color: #f8f9fa;">
               <div id="carousel-${product.id}" class="carousel slide">
                   <div class="carousel-inner">
@@ -77,6 +82,17 @@ function handleSearch(event) {
       }
   });
 }
+
+// click product link and open product page
+function linkToProduct(event, id) {
+  // ignores button events (carousel and quick add buttons)
+  if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SPAN") {
+    // console.log("CLICKED ", event.target.tagName);
+
+    window.location.href = `/product/?id=${ id }`
+  }
+}
+
 
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
