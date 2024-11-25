@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Rainbow Jibbitz",
         price: 4.99,
-        images: ["/Jibbitz_Rainbow/rainbowJibbit.png", "/Jibbitz_Rainbow/rainbowOnCroc.png"],
+        images: ["/images/rainbowJibbit.png", "/images/rainbowOnCroc.png"],
         colour: "Multicoloured",
         rating: 9
     },
@@ -11,7 +11,7 @@ const products = [
         id: 2,
         name: "Star Jibbitz",
         price: 3.99,
-        images: ["/Jibbitz_Star/starJibbit.png", "/Jibbitz_Star/starOnCroc.png"],
+        images: ["/images/starJibbit.png", "/images/starOnCroc.png"],
         colour: "Yellow",
         rating: 8
     },
@@ -19,7 +19,7 @@ const products = [
         id: 3,
         name: "Heart Jibbitz",
         price: 4.49,
-        images: ["/Jibbitz_Heart/heartJibbit.png", "/Jibbitz_Heart/heartOnCroc.png"],
+        images: ["/images/heartJibbit.png", "/images/heartOnCroc.png"],
         colour: "Red",
         rating: 10
     },
@@ -27,7 +27,7 @@ const products = [
         id: 4,
         name: "Flower Jibbitz",
         price: 3.99,
-        images: ["/Jibbitz_Flower/flowerJibbit.png", "/Jibbitz_Flower/flowerOnCroc.png"],
+        images: ["/images/flowerJibbit.png", "/images/flowerOnCroc.png"],
         colour: "Pink",
         rating: 9
     }
