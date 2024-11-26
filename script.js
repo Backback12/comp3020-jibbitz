@@ -1,38 +1,118 @@
 const products = [
-    {
-        id: 1,
-        name: "Rainbow Jibbitz",
-        price: 4.99,
-        images: ["/Jibbitz_Rainbow/rainbowJibbit.png", "/Jibbitz_Rainbow/rainbowOnCroc.png"],
-        colour: "Multicoloured",
-        rating: 9
-    },
-    {
-        id: 2,
-        name: "Star Jibbitz",
-        price: 3.99,
-        images: ["/Jibbitz_Star/starJibbit.png", "/Jibbitz_Star/starOnCroc.png"],
-        colour: "Yellow",
-        rating: 8
-    },
-    {
-        id: 3,
-        name: "Heart Jibbitz",
-        price: 4.49,
-        images: ["/Jibbitz_Heart/heartJibbit.png", "/Jibbitz_Heart/heartOnCroc.png"],
-        colour: "Red",
-        rating: 10
-    },
-    {
-        id: 4,
-        name: "Flower Jibbitz",
-        price: 3.99,
-        images: ["/Jibbitz_Flower/flowerJibbit.png", "/Jibbitz_Flower/flowerOnCroc.png"],
-        colour: "Pink",
-        rating: 9
-    }
-  ];
-window.products = products;
+  {
+      id: 1,
+      name: "Rainbow Jibbitz",
+      price: 4.99,
+      images: ["Jibbitz_Rainbow/rainbowJibbit.png", "Jibbitz_Rainbow/rainbowOnCroc.png"],
+      colour: "Multicoloured"
+  },
+  {
+      id: 2,
+      name: "Star Jibbitz",
+      price: 3.99,
+      images: ["Jibbitz_Star/starJibbit.png", "Jibbitz_Star/starOnCroc.png"],
+      colour: "Yellow"
+  },
+  {
+      id: 3,
+      name: "Heart Jibbitz",
+      price: 4.49,
+      images: ["Jibbitz_Heart/heartJibbit.png", "Jibbitz_Heart/heartOnCroc.png"],
+      colour: "Red"
+  },
+  {
+      id: 4,
+      name: "Flower Jibbitz",
+      price: 3.99,
+      images: ["Jibbitz_Flower/flowerJibbit.png", "Jibbitz_Flower/flowerOnCroc.png"],
+      colour: "Pink"
+  },
+  {
+    id: 5,
+    name: "Soccer Ball Jibbitz",
+    price: 5.49,
+    images: ["Jibbitz_Soccer/soccerJibbit.png", "Jibbitz_Soccer/soccerOnCroc.png"],
+    colour: "Multicoloured"
+  },
+  ,
+  {
+    id: 6,
+    name: "Stitch Jibbitz",
+    price: 5.99,
+    images: ["Jibbitz_Stitch/stitchJibbit.png", "Jibbitz_Stitch/stitchOnCroc.png"],
+    colour: "Blue"
+  },
+  {
+    id: 7,
+    name: "Charmander Jibbitz",
+    price: 5.99,
+    images: ["Jibbitz_Charmander/charmanderJibbit.png", "Jibbitz_Charmander/charmanderOnCroc.png"],
+    colour: "Orange"
+  },
+  {
+    id: 8,
+    name: "Alien Jibbitz",
+    price: 3.49,
+    images: ["Jibbitz_Alien/alienJibbit.png", "Jibbitz_alien/alienOnCroc.png"],
+    colour: "Green"
+  },
+  {
+    id: 9,
+    name: "Dino Jibbitz",
+    price: 5.99,
+    images: ["Jibbitz_Dino/dinoJibbit.png", "Jibbitz_dino/dinoOnCroc.png"],
+    colour: "Purple"
+  },
+  {
+    id: 10,
+    name: "Spongebob Jibbitz",
+    price: 4.99,
+    images: ["Jibbitz_Spongebob/spongebobJibbit.png", "Jibbitz_Spongebob/spongebobOnCroc.png"],
+    colour: "Yellow"
+  },
+  {
+    id: 11,
+    name: "Spiderman Jibbitz",
+    price: 3.99,
+    images: ["Jibbitz_Spiderman/spidermanJibbit.png", "Jibbitz_Spiderman/spidermanOnCroc.png"],
+    colour: "Red"
+  },
+  {
+    id: 12,
+    name: "Shark Jibbitz",
+    price: 3.49,
+    images: ["Jibbitz_shark/sharkJibbit.png", "Jibbitz_shark/sharkOnCroc.png"],
+    colour: "Blue"
+  },
+  {
+    id: 13,
+    name: "Trex Jibbitz",
+    price: 3.49,
+    images: ["Jibbitz_Trex/trexJibbit.png", "Jibbitz_trex/trexOnCroc.png"],
+    colour: "Green"
+  },
+  {
+    id: 14,
+    name: "Seahorse Jibbitz",
+    price: 4.49,
+    images: ["Jibbitz_Seahorse/seahorseJibbit.png", "Jibbitz_seahorse/seahorseOnCroc.png"],
+    colour: "Pink"
+  },
+  {
+    id: 15,
+    name: "Rainbow Flower Jibbitz",
+    price: 5.49,
+    images: ["Jibbitz_RainbowFlower/rainbowFlowerJibbit.png", "Jibbitz_RainbowFlower/rainbowFlowerOnCroc.png"],
+    colour: "Multicoloured"
+  },
+  {
+    id: 16,
+    name: "Fireman Jibbitz",
+    price: 4.29,
+    images: ["Jibbitz_Fireman/firemanJibbit.png", "Jibbitz_fireman/firemanOnCroc.png"],
+    colour: "Red"
+  }
+];
 
 //added in background colour for product cards-Shana
 function generateProductGrid() {
@@ -40,7 +120,7 @@ function generateProductGrid() {
   if (!productGrid) return;
 
   productGrid.innerHTML = products.map(product => `
-      <div class="col-md-3 clickable" onclick="linkToProduct(event, ${ product.id })" data-colour="${product.colour}">
+      <div class="col-md-3" data-colour="${product.colour}">
           <div class="product-card" style="background-color: #f8f9fa;">
               <div id="carousel-${product.id}" class="carousel slide">
                   <div class="carousel-inner">
@@ -82,17 +162,6 @@ function handleSearch(event) {
       }
   });
 }
-
-// click product link and open product page
-function linkToProduct(event, id) {
-  // ignores button events (carousel and quick add buttons)
-  if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SPAN") {
-    // console.log("CLICKED ", event.target.tagName);
-
-    window.location.href = `/product/?id=${ id }`
-  }
-}
-
 
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
