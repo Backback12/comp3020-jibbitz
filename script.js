@@ -5,7 +5,8 @@ const products = [
         price: 4.99,
         images: ["/images/rainbowJibbit.png", "/images/rainbowOnCroc.png"],
         colour: "Multicoloured",
-        rating: 9
+        rating: 9,
+        orders: 512
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const products = [
         price: 3.99,
         images: ["/images/starJibbit.png", "/images/starOnCroc.png"],
         colour: "Yellow",
-        rating: 8
+        rating: 8,
+        orders: 383
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const products = [
         price: 4.49,
         images: ["/images/heartJibbit.png", "/images/heartOnCroc.png"],
         colour: "Red",
-        rating: 10
+        rating: 10,
+        orders: 925
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const products = [
         price: 3.99,
         images: ["/images/flowerJibbit.png", "/images/flowerOnCroc.png"],
         colour: "Pink",
-        rating: 9
+        rating: 9,
+        orders: 633
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ const products = [
         price: 5.49,
         images: ["/images/soccerJibbit.png", "/images/soccerOnCroc.png"],
         colour: "Multicoloured",
-        rating: 4
+        rating: 4,
+        orders: 85
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ const products = [
         price: 5.99,
         images: ["/images/stitchJibbit.png", "/images/stitchOnCroc.png"],
         colour: "Blue",
-        rating: 7
+        rating: 7,
+        orders: 104
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ const products = [
         price: 5.99,
         images: ["/images/charmanderJibbit.png", "/images/charmanderOnCroc.png"],
         colour: "Orange",
-        rating: 10
+        rating: 10,
+        orders: 302
     },
     {
         id: 8,
@@ -61,7 +68,8 @@ const products = [
         price: 3.49,
         images: ["/images/alienJibbit.png", "/images/alienOnCroc.png"],
         colour: "Green",
-        rating: 8
+        rating: 8,
+        orders: 221
     },
     {
         id: 9,
@@ -69,7 +77,8 @@ const products = [
         price: 5.99,
         images: ["/images/dinoJibbit.png", "/images/dinoOnCroc.png"],
         colour: "Purple",
-        rating: 9
+        rating: 9,
+        orders: 245
     },
     {
         id: 10,
@@ -77,7 +86,8 @@ const products = [
         price: 4.99,
         images: ["/images/spongebobJibbit.png", "/images/spongebobOnCroc.png"],
         colour: "Yellow",
-        rating: 8
+        rating: 8,
+        orders: 297
     },
     {
         id: 11,
@@ -85,7 +95,8 @@ const products = [
         price: 3.99,
         images: ["/images/spidermanJibbit.png", "/images/spidermanOnCroc.png"],
         colour: "Red",
-        rating: 9
+        rating: 9,
+        orders: 540
     },
     {
         id: 12,
@@ -93,7 +104,8 @@ const products = [
         price: 3.49,
         images: ["/images/sharkJibbit.png", "/images/sharkOnCroc.png"],
         colour: "Blue",
-        rating: 6
+        rating: 6,
+        orders: 171
     },
     {
         id: 13,
@@ -101,7 +113,8 @@ const products = [
         price: 3.49,
         images: ["/images/trexJibbit.png", "/images/trexOnCroc.png"],
         colour: "Green",
-        rating: 5
+        rating: 5,
+        orders: 140
     },
     {
         id: 14,
@@ -109,7 +122,8 @@ const products = [
         price: 4.49,
         images: ["/images/seahorseJibbit.png", "/images/seahorseOnCroc.png"],
         colour: "Pink",
-        rating: 4
+        rating: 4,
+        orders: 73
     },
     {
         id: 15,
@@ -117,7 +131,8 @@ const products = [
         price: 5.49,
         images: ["/images/rainbowFlowerJibbit.png", "/images/rainbowFlowerOnCroc.png"],
         colour: "Multicoloured",
-        rating: 6
+        rating: 6,
+        orders: 132
     },
     {
         id: 16,
@@ -125,7 +140,8 @@ const products = [
         price: 4.29,
         images: ["/images/firemanJibbit.png", "images/firemanOnCroc.png"],
         colour: "Red",
-        rating: 8
+        rating: 8,
+        orders: 255
     }
   ];
 window.products = products;
