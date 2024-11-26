@@ -43,10 +43,10 @@
         <div class="d-flex">
             <div class="card p-4" style="min-width: 300px; max-width: 400px;">
                 <!-- left title & info -->
-                <!-- <h1>Flowrr</h1> -->
-                <!-- <h4>$0.99</h4> -->
+
                 <h1 id="product-name"></h1>
                 <h4 id="product-price"></h4>
+
                 <a id="product-rating">
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
@@ -54,6 +54,7 @@
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </a>
+
             </div>
             <div class="card d-flex align-items-center flex-grow-1">
                 <!-- image preview -->
@@ -64,43 +65,36 @@
 
     
     <!-- Buttons -->
-    <div>
-
+    <div class="container mt-2 flex-column px-5">
+        <button class="btn btn-primary buy-button" id="add-to-cart-btn">
+            Add to cart ( I will fix alignment )
+        </button>
+        <label for="buy-count">Quantity (need to implement) </label>
+        <input type="number" id="buy-count" value="1" min="1" max="99">
     </div>
 
 
 
     <!-- Reviews -->
-    <div class="overflow-scroll p-5">
-        <div class="">
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
-            <div class="card m-2 p-1">
-                <a>John Doe</a>
-                <p>This was awesome</p>
-            </div>
+    <div class="container mt-2 overflow-scroll p-5">
+        <div class="" id="reviews-list">
+            <!-- <div class="card m-2 p-1 d-flex flex-row">
+                <div class="profile-icon m-2">
+                    <img src="/images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
+                </div>
+                <div class="m-2">
+                    <a style="font-weight: bold;">John Doe</a>
+                    <br>
+                    <a id="product-rating">
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </a>
+                    <p>This was awesome</p>
+                </div>
+            </div> -->
             
         </div>
     </div>
