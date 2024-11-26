@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function clearCart() {
     // Clear the cart array
     cart = [];
-    
+
     localStorage.removeItem('cart');
     
     // Re-generate the cart items (which will show the empty cart message)
@@ -188,3 +188,4 @@ function clearCart() {
     // Optionally, show a notification that the cart was cleared
     showNotification('Your cart has been cleared');
 }
+

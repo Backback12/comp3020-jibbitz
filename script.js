@@ -30,6 +30,102 @@ const products = [
         images: ["/images/flowerJibbit.png", "/images/flowerOnCroc.png"],
         colour: "Pink",
         rating: 9
+    },
+    {
+        id: 5,
+        name: "Soccer Ball Jibbitz",
+        price: 5.49,
+        images: ["/images/soccerJibbit.png", "/images/soccerOnCroc.png"],
+        colour: "Multicoloured",
+        rating: 4
+    },
+    {
+        id: 6,
+        name: "Stitch Jibbitz",
+        price: 5.99,
+        images: ["/images/stitchJibbit.png", "/images/stitchOnCroc.png"],
+        colour: "Blue",
+        rating: 7
+    },
+    {
+        id: 7,
+        name: "Charmander Jibbitz",
+        price: 5.99,
+        images: ["/images/charmanderJibbit.png", "/images/charmanderOnCroc.png"],
+        colour: "Orange",
+        rating: 10
+    },
+    {
+        id: 8,
+        name: "Alien Jibbitz",
+        price: 3.49,
+        images: ["/images/alienJibbit.png", "/images/alienOnCroc.png"],
+        colour: "Green",
+        rating: 8
+    },
+    {
+        id: 9,
+        name: "Dino Jibbitz",
+        price: 5.99,
+        images: ["/images/dinoJibbit.png", "/images/dinoOnCroc.png"],
+        colour: "Purple",
+        rating: 9
+    },
+    {
+        id: 10,
+        name: "Spongebob Jibbitz",
+        price: 4.99,
+        images: ["/images/spongebobJibbit.png", "/images/spongebobOnCroc.png"],
+        colour: "Yellow",
+        rating: 8
+    },
+    {
+        id: 11,
+        name: "Spiderman Jibbitz",
+        price: 3.99,
+        images: ["/images/spidermanJibbit.png", "/images/spidermanOnCroc.png"],
+        colour: "Red",
+        rating: 9
+    },
+    {
+        id: 12,
+        name: "Shark Jibbitz",
+        price: 3.49,
+        images: ["/images/sharkJibbit.png", "/images/sharkOnCroc.png"],
+        colour: "Blue",
+        rating: 6
+    },
+    {
+        id: 13,
+        name: "Trex Jibbitz",
+        price: 3.49,
+        images: ["/images/trexJibbit.png", "/images/trexOnCroc.png"],
+        colour: "Green",
+        rating: 5
+    },
+    {
+        id: 14,
+        name: "Seahorse Jibbitz",
+        price: 4.49,
+        images: ["/images/seahorseJibbit.png", "/images/seahorseOnCroc.png"],
+        colour: "Pink",
+        rating: 4
+    },
+    {
+        id: 15,
+        name: "Rainbow Flower Jibbitz",
+        price: 5.49,
+        images: ["/images/rainbowFlowerJibbit.png", "/images/rainbowFlowerOnCroc.png"],
+        colour: "Multicoloured",
+        rating: 6
+    },
+    {
+        id: 16,
+        name: "Fireman Jibbitz",
+        price: 4.29,
+        images: ["/images/firemanJibbit.png", "images/firemanOnCroc.png"],
+        colour: "Red",
+        rating: 8
     }
   ];
 window.products = products;
