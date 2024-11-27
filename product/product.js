@@ -191,6 +191,7 @@ function loginPopup() {
                       </div>
                       <div class="modal-body d-flex flex-column justify-content-center align-items-center">
                           <h2><strong>${username}</strong></h2>
+                          <button type="submit" class="btn btn-primary" id="orderHistory">Order History</button>
                           <button class="btn btn-danger" id="confirmLogout">Logout</button>
                       </div>
                   </div>
@@ -206,6 +207,13 @@ function loginPopup() {
           logoutModal.hide();
           updateProfileUI();
       });
+
+      document.getElementById('orderHistory').addEventListener('click', () => {
+          logoutModal.hide();
+          //redirect to order history page
+          window.location.href = '/order-history/index.html';
+      });
+      
   }
 }
 
