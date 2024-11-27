@@ -25,10 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
                                                         + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
     // set image (temp)
     document.getElementById('product-img').src = products[id]['images'][0];
+    // document.getElementById('img-container').innerHTML = 
+    
 
 
+    const quantity_input = document.getElementById('product-quantity');
     // set product buy ID
-    document.getElementById('add-to-cart-btn').onclick = function() {addToCart(id + 1)};
+    document.getElementById('add-to-cart-btn').onclick = function() {
+      
+      addToCart(id + 1, Number(quantity_input.value));
+    };
     // document.getElementById('add-to-cart-btn').onclick = `console.log('222')`;
   }
   else {
@@ -52,7 +58,7 @@ function createReviewDOM() {
   const randomReview = reviews[Math.floor(Math.random() * reviews.length)];
   // const rating = Math.floor(Math.random() * 10)
   // rating 8, 9, 10, 11
-  const rating = 8 + Math.floor(Math.random() * 4);
+  var rating = 8 + Math.floor(Math.random() * 4);
   if (randomReview == "") {rating = 10}  // edge case for blank random review
 
   // if > 10.... 2/5 chance person did not review
