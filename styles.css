@@ -88,3 +88,46 @@ body{
 .clickable {
   cursor: pointer;
 }
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-preview {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+
+.cart-preview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cart-preview li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-preview img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#cartSubtotal {
+  font-weight: bold;
+  margin-top: 10px;
+}
