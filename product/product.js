@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('product-img').src = products[id]['images'][0];
     // document.getElementById('img-container').innerHTML = 
     
-
-
     const quantity_input = document.getElementById('product-quantity');
     // set product buy ID
     document.getElementById('add-to-cart-btn').onclick = function() {
@@ -36,6 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
       addToCart(id + 1, Number(quantity_input.value));
     };
     // document.getElementById('add-to-cart-btn').onclick = `console.log('222')`;
+
+
+    // IMPORT REVIEWS
+    const reviewsList = document.getElementById('reviews-list');
+    for (var i = 0; i < products[id]['reviews'].length; i++) {
+      
+      // reviewsList.appendChild(addReview(products[id]['reviews'][i]['name'], products[id]['reviews'][i]['comment'], products[id]['reviews'][i]['rating']))
+      reviewsList.insertBefore(addReview(products[id]['reviews'][i]['name'], products[id]['reviews'][i]['comment'], products[id]['reviews'][i]['rating']), reviewsList.children[reviewsList.childElementCount-1]);
+    }
+
+
+    // if logged in, show "POST REVIEW"
+    const createReview = document.getElementById('create-review');
+    if (isLoggedIn()) {
+      // document.getElementById('create-review').style.visibility = "visible";
+      console.log('you logged in ', createReview);
+      // createReview.style.display = 'block !important';
+      createReview.classList.add('d-flex');
+      createReview.classList.remove('d-none');
+    }
+    else {
+      // document.getElementById('create-review').style.visibility = "hidden";
+      console.log('noooooo ', createReview);
+      // createReview.style.display = 'none !important';
+      createReview.classList.add('d-none');
+      createReview.classList.remove('d-flex');
+    }
   }
   else {
     // no ID!
@@ -47,22 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCartPreview()
 
 
-  // if logged in, show "POST REVIEW"
-  const createReview = document.getElementById('create-review');
-  if (isLoggedIn()) {
-    // document.getElementById('create-review').style.visibility = "visible";
-    console.log('you logged in ', createReview);
-    // createReview.style.display = 'block !important';
-    createReview.classList.add('d-block');
-    createReview.classList.remove('d-none');
-  }
-  else {
-    // document.getElementById('create-review').style.visibility = "hidden";
-    console.log('noooooo ', createReview);
-    // createReview.style.display = 'none !important';
-    createReview.classList.add('d-none');
-    createReview.classList.remove('d-block');
-  }
+  
   
   
 });
@@ -97,31 +107,11 @@ const mixedUsernames = [
   "SunnyToes12", "wanderer_72", "Sunny_Vibes", "Connor_Pagtakhan"
 ];
 
-function createReviewDOM(rating=null, comments=null) {
-  var randomName = "";
-  var randomReview = "";
+function addReview(name, comment, rating) {
 
-  if (rating == null && comments == null) {
-    // randomName = `${firstnames[Math.floor(Math.random() * firstnames.length)]} ${lastnames[Math.floor(Math.random() * lastnames.length)]}`;
-    randomName = mixedUsernames[Math.floor(Math.random() * mixedUsernames.length)];
-    randomReview = reviews[Math.floor(Math.random() * reviews.length)];
-    // const rating = Math.floor(Math.random() * 10)
-    // rating 8, 9, 10, 11
-    var rating = 8 + Math.floor(Math.random() * 4);
-    if (randomReview == "") {rating = 10}  // edge case for blank random review
-  }
-  else {
-    randomName = localStorage.getItem('username');
-    randomReview = comments;
-  }
-
-  // if > 10.... 2/5 chance person did not review
-  var randomRating = "";
-  if (rating <= 10) {
-    randomRating = '<i class="bi bi-star-fill"></i>'.repeat(Math.floor(rating/2))  // full stars 
-                  + '<i class="bi bi-star-half"></i>'.repeat(rating % 2)            // half stars
-                  + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
-  }
+  ratingText = '<i class="bi bi-star-fill"></i>'.repeat(Math.floor(rating/2))  // full stars 
+              + '<i class="bi bi-star-half"></i>'.repeat(rating % 2)            // half stars
+              + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
 
   const reviewCard = 
   `<div class="card m-2 p-1 d-flex flex-row">
@@ -129,38 +119,24 @@ function createReviewDOM(rating=null, comments=null) {
           <img src="/images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
       </div>
       <div class="m-2">
-          <a style="font-weight: bold;">${ randomName }</a>
+          <a style="font-weight: bold;">${ name }</a>
           <br>
           <a id="product-rating">
-              ${ randomRating }
+              ${ ratingText }
           </a>
-          <p>${ randomReview }</p>
+          <p>${ comment }</p>
       </div>
   </div>`
 
   const template = document.createElement('template');
   template.innerHTML = reviewCard;
   
-  return template.content.firstChild;
+  // return template.content.firstChild;
+  // const reviewsList = document.getElementById('reviews-list');
+
+  // reviewsList.appendChild(template.content.firstChild)
+  return template.content.firstChild
 }
-
-
-// generate 10 reviews
-const reviewsList = document.getElementById('reviews-list');
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM());
-// reviewsList.appendChild(createReviewDOM(10, "BEST EVER"));
-
-for (var i = 0; i < (4 + Math.random() * 8); i++) {
-  reviewsList.insertBefore(createReviewDOM(), reviewsList.firstChild);
-}
-
-
 
 
 //login state

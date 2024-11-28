@@ -165,9 +165,12 @@ function submitReview() {
     const reviewComments = document.getElementById('review-comments');
     const comments = reviewComments.value;
 
+    const reviewName = localStorage.getItem('username');
 
     const reviewsList = document.getElementById('reviews-list');
-    reviewsList.insertBefore(createReviewDOM(rating, comments), reviewsList.children[reviewsList.childElementCount-1]);
+    // reviewsList.insertBefore(createReviewDOM(rating, comments), reviewsList.children[reviewsList.childElementCount-1]);
+    // addReview(reviewName, comments, rating)
+    reviewsList.insertBefore(addReview(reviewName, comments, rating), reviewsList.children[reviewsList.childElementCount-1]);
 
     // clear forms
     reviewRatingRange.value = 5;

@@ -6,7 +6,8 @@ const products = [
         images: ["/images/rainbowJibbit.png", "/images/rainbowOnCroc.png"],
         colour: "Multicoloured",
         rating: 9,
-        orders: 512
+        orders: 512,
+        reviews: [{name: "GoldenTreads", comment: "This one’s a conversation starter for sure!", rating: 8}, {name: "clog_trotter_12", comment: "This one’s a conversation starter for sure!", rating: 9}, {name: "peaceful.tread", comment: "Nice", rating: 9}, {name: "LilaLoafers", comment: "fits perfectly. will def buy more", rating: 8}, {name: "wanderer_72", comment: "These make my Crocs stand out.", rating: 10}, {name: "lightwalk", comment: "my favourite", rating: 9}]
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const products = [
         images: ["/images/starJibbit.png", "/images/starOnCroc.png"],
         colour: "Yellow",
         rating: 8,
-        orders: 383
+        orders: 383,
+        reviews: [{name: "crocs-Fan88", comment: "nice item!! would get again", rating: 8}, {name: "sole.search9", comment: "Brightens up my shoes instantly.", rating: 10}, {name: "wander_88", comment: "A bit pricey for what it is, but I love it anyway.", rating: 10}, {name: "MayaTrekker", comment: "Stays on securely, even with daily wear.", rating: 10}]
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const products = [
         images: ["/images/heartJibbit.png", "/images/heartOnCroc.png"],
         colour: "Red",
         rating: 10,
-        orders: 925
+        orders: 925,
+        reviews: [{name: "JibberJack", comment: "fits perfectly. will def buy more", rating: 9}, {name: "CozyTrail33", comment: "Nice", rating: 10}, {name: "crocs.hiker9", comment: "this is pretty cool", rating: 10}, {name: "ComfortCrew09", comment: "It’s giving “main character energy” 🤩.", rating: 8}, {name: "CrocStar45", comment: "These are super cute!", rating: 8}]
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const products = [
         images: ["/images/flowerJibbit.png", "/images/flowerOnCroc.png"],
         colour: "Pink",
         rating: 9,
-        orders: 633
+        orders: 633,
+        reviews: [{name: "chill_pacer", comment: "My kids adore these!", rating: 10}, {name: "looped_up24", comment: "🌼 The colors are brighter than I expected—pleasant surprise!", rating: 10}, {name: "PebblePath19", comment: "Such a clever and cool idea.", rating: 8}, {name: "LazySoles", comment: "My favorite Jibbitz so far.", rating: 10}, {name: "clogmaster", comment: "A bit pricey for what it is, but I love it anyway.", rating: 8}, {name: "Wanderlust44", comment: "nice item!! would get again", rating: 8}]
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ const products = [
         images: ["/images/soccerJibbit.png", "/images/soccerOnCroc.png"],
         colour: "Multicoloured",
         rating: 4,
-        orders: 85
+        orders: 85,
+        reviews: [{name: "RelaxedRobin7", comment: "really fun to collect, i’m obsessed rn", rating: 9}, {name: "crocs.hiker9", comment: "I put these on all my Crocs.", rating: 8}, {name: "LunaJib", comment: "My favorite Jibbitz so far.", rating: 8}, {name: "SimpleClogger", comment: "Stays on securely, even with daily wear.", rating: 8}]
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ const products = [
         images: ["/images/stitchJibbit.png", "/images/stitchOnCroc.png"],
         colour: "Blue",
         rating: 7,
-        orders: 104
+        orders: 104,
+        reviews: [{name: "wander.spirit", comment: "It’s giving “main character energy” 🤩.", rating: 8}, {name: "ZaneLoops", comment: "My favorite Jibbitz so far.", rating: 9}, {name: "QuickStride7", comment: "this is pretty cool", rating: 9}, {name: "clogLoverX3", comment: "My favorite Jibbitz so far.", rating: 9}, {name: "soft.clogz7", comment: "A bit pricey for what it is, but I love it anyway.", rating: 10}]
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ const products = [
         images: ["/images/charmanderJibbit.png", "/images/charmanderOnCroc.png"],
         colour: "Orange",
         rating: 10,
-        orders: 302
+        orders: 302,
+        reviews: [{name: "Connor_Pagtakhan", comment: "My kids adore these!", rating: 10}, {name: "LazySoles", comment: "My kids adore these!", rating: 8}, {name: "crocs-Fan88", comment: "This one’s a conversation starter for sure!", rating: 9}, {name: "MayaTrekker", comment: "These are super cute!", rating: 9}, {name: "aqua.stroll99", comment: "nice item!! would get again", rating: 10}, {name: "SoleStride_", comment: "Really sturdy, even after hiking in my Crocs 🥾.", rating: 8}, {name: "wander_88", comment: "Matches my style perfectly.", rating: 8}, {name: "beach.breeze24", comment: "", rating: 10}, {name: "urban_steps_12", comment: "Great quality for the price.", rating: 9}, {name: "MellowMiles44", comment: "This one’s a conversation starter for sure!", rating: 8}, {name: "LilaLoafers", comment: "my favourite", rating: 8}]
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ const products = [
         images: ["/images/alienJibbit.png", "/images/alienOnCroc.png"],
         colour: "Green",
         rating: 8,
-        orders: 221
+        orders: 221,
+        reviews: [{name: "step.along22", comment: "Brightens up my shoes instantly.", rating: 8}, {name: "Warm.Pace3", comment: "I get so many compliments on this!", rating: 8}, {name: "beach.bound", comment: "Nice", rating: 8}, {name: "clog_trotter_12", comment: "Nice", rating: 9}, {name: "ZaneLoops", comment: "Bought this to match my BFF’s Crocs 💕.", rating: 10}, {name: "Slip.On.88", comment: "Love this design!", rating: 8}, {name: "River_Trek99", comment: "It’s cute, but I wish it had more detail.", rating: 10}, {name: "StepMaster89", comment: "My kids adore these!", rating: 9}, {name: "Croczilla42", comment: "Bought this to match my BFF’s Crocs 💕.", rating: 10}, {name: "CrocsGuy_101", comment: "I get so many compliments on this!", rating: 9}]
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ const products = [
         images: ["/images/dinoJibbit.png", "/images/dinoOnCroc.png"],
         colour: "Purple",
         rating: 9,
-        orders: 245
+        orders: 245,
+        reviews: [{name: "clogmaster", comment: "Great quality for the price.", rating: 9}, {name: "SandalSeeker", comment: "My favorite Jibbitz so far.", rating: 8}, {name: "open_toes42", comment: "fits perfectly. will def buy more", rating: 9}, {name: "heels_Clicks01", comment: "Highly recommend to any Crocs lover!", rating: 10}, {name: "heels_Clicks01", comment: "Great quality for the price.", rating: 10}, {name: "LoopedTrail23", comment: "Got this as a gift, and now I want more!", rating: 10}, {name: "ElliotToes5", comment: "Adds so much personality to my Crocs.", rating: 10}, {name: "StepMaster89", comment: "my favourite", rating: 9}, {name: "breeze_trail99", comment: "My dog even tried to chew it, that’s how good it is 😂.", rating: 9}]
     },
     {
         id: 10,
@@ -87,7 +96,8 @@ const products = [
         images: ["/images/spongebobJibbit.png", "/images/spongebobOnCroc.png"],
         colour: "Yellow",
         rating: 8,
-        orders: 297
+        orders: 297,
+        reviews: [{name: "soleseeker17", comment: "Matches my style perfectly.", rating: 10}, {name: "breeze_trail99", comment: "I put this on my work Crocs, and my coworkers noticed!", rating: 9}, {name: "croczoned", comment: "Stays on securely, even with daily wear.", rating: 10}, {name: "CozyTrail33", comment: "I bought this for a friend, and they loved it!", rating: 10}, {name: "beach.breeze24", comment: "Bought this to match my BFF’s Crocs 💕.", rating: 8}, {name: "AlexWalker22", comment: "my favourite", rating: 8}, {name: "step.along22", comment: "this is pretty cool", rating: 8}, {name: "JibberJack", comment: "fits perfectly. will def buy more", rating: 9}, {name: "EllaWanderer", comment: "So fun and unique.", rating: 8}]
     },
     {
         id: 11,
@@ -96,7 +106,8 @@ const products = [
         images: ["/images/spidermanJibbit.png", "/images/spidermanOnCroc.png"],
         colour: "Red",
         rating: 9,
-        orders: 540
+        orders: 540,
+        reviews: [{name: "MayaTrekker", comment: "This one’s a conversation starter for sure!", rating: 10}, {name: "croczoned", comment: "this is pretty cool", rating: 9}, {name: "BennySteps", comment: "Highly recommend to any Crocs lover!", rating: 8}, {name: "TylerTreads", comment: "this is pretty cool", rating: 10}, {name: "beach.breeze24", comment: "Great quality for the price.", rating: 9}, {name: "Soft_Steps", comment: "These are super cute!", rating: 10}, {name: "ComfySteps_21", comment: "nice item!! would get again", rating: 8}, {name: "Stroll_Freak", comment: "", rating: 9}, {name: "SoftSoles", comment: "🌼 The colors are brighter than I expected—pleasant surprise!", rating: 8}]
     },
     {
         id: 12,
@@ -105,7 +116,8 @@ const products = [
         images: ["/images/sharkJibbit.png", "/images/sharkOnCroc.png"],
         colour: "Blue",
         rating: 6,
-        orders: 171
+        orders: 171,
+        reviews: [{name: "RelaxedRobin7", comment: "Got this as a gift, and now I want more!", rating: 9}, {name: "AlexWalker22", comment: "Matches my style perfectly.", rating: 8}, {name: "urban_steps_12", comment: "Got this as a gift, and now I want more!", rating: 9}, {name: "beach.bound", comment: "I put these on all my Crocs.", rating: 8}, {name: "SunnyStride", comment: "Brightens up my shoes instantly.", rating: 9}, {name: "ChillTread", comment: "These make my Crocs stand out.", rating: 10}]
     },
     {
         id: 13,
@@ -114,7 +126,8 @@ const products = [
         images: ["/images/trexJibbit.png", "/images/trexOnCroc.png"],
         colour: "Green",
         rating: 5,
-        orders: 140
+        orders: 140,
+        reviews: [{name: "relaxed_toes", comment: "Adds so much personality to my Crocs.", rating: 10}, {name: "TrailJunkie99", comment: "Great quality for the price.", rating: 8}, {name: "EllaWanderer", comment: "🌼 The colors are brighter than I expected—pleasant surprise!", rating: 10}, {name: "soft.clogz7", comment: "So fun and unique.", rating: 9}, {name: "MilesAhead101", comment: "Nice", rating: 9}, {name: "chill_pacer", comment: "my favourite", rating: 9}, {name: "Slip.On.88", comment: "I bought this for a friend, and they loved it!", rating: 10}]
     },
     {
         id: 14,
@@ -123,7 +136,8 @@ const products = [
         images: ["/images/seahorseJibbit.png", "/images/seahorseOnCroc.png"],
         colour: "Pink",
         rating: 4,
-        orders: 73
+        orders: 73,
+        reviews: [{name: "looped_up24", comment: "🌟 Simple but super stylish.", rating: 10}, {name: "CrocsGuy_101", comment: "nice item!! would get again", rating: 10}, {name: "Pebble_Trek", comment: "My kids adore these!", rating: 8}, {name: "AlexWalker22", comment: "This one’s a conversation starter for sure!", rating: 9}, {name: "chill_pacer", comment: "Matches my style perfectly.", rating: 8}, {name: "breeze_trail99", comment: "my favourite", rating: 8}, {name: "SimpleClogger", comment: "fits perfectly. will def buy more", rating: 8}]
     },
     {
         id: 15,
@@ -132,7 +146,8 @@ const products = [
         images: ["/images/rainbowFlowerJibbit.png", "/images/rainbowFlowerOnCroc.png"],
         colour: "Multicoloured",
         rating: 6,
-        orders: 132
+        orders: 132,
+        reviews: [{name: "walks_in_sand", comment: "Adds so much personality to my Crocs.", rating: 9}, {name: "jib_walk", comment: "really fun to collect, i’m obsessed rn", rating: 8}, {name: "LazyLoops_", comment: "Brightens up my shoes instantly.", rating: 10}, {name: "clogLoverX3", comment: "It’s giving “main character energy” 🤩.", rating: 9}, {name: "SimpleClogger", comment: "Nice", rating: 8}]
     },
     {
         id: 16,
@@ -141,7 +156,8 @@ const products = [
         images: ["/images/firemanJibbit.png", "images/firemanOnCroc.png"],
         colour: "Red",
         rating: 8,
-        orders: 255
+        orders: 255,
+        reviews: [{name: "heel_clicker", comment: "Adds so much personality to my Crocs.", rating: 9}, {name: "beach.bound", comment: "So fun and unique.", rating: 10}, {name: "toes_Runner", comment: "Love this design!", rating: 8}, {name: "breeze_trail99", comment: "Stays on securely, even with daily wear.", rating: 10}]
     }
   ];
 window.products = products;
