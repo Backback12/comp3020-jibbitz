@@ -139,89 +139,91 @@ function updateProfileUI() {
 
 // Login Popup
 function loginPopup() {
-  if (!isLoggedIn()) {
-      // Display login form if not logged in
-      const loginFormHTML = `
-          <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title">Login</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                      </div>
-                      <div class="modal-body">
-                          <form id="loginForm">
-                              <div class="mb-3">
-                                  <label for="username" class="form-label">Username</label>
-                                  <input type="text" id="username" class="form-control">
-                              </div>
-                              <div class="mb-3">
-                                  <label for="password" class="form-label">Password</label>
-                                  <input type="password" id="password" class="form-control">
-                              </div>
-                              <button type="submit" class="btn btn-primary">Login</button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>`;
-      document.body.insertAdjacentHTML('beforeend', loginFormHTML);
+    if (!isLoggedIn()) {
+        const loginFormHTML = `
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" id="username" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" id="password" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML('beforeend', loginFormHTML);
 
-      const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
-      loginModal.show();
+        const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
+        loginModal.show();
 
-      document.getElementById('loginForm').addEventListener('submit', (e) => {
-          e.preventDefault();
-          // Perform login logic here (e.g., validate credentials)
-          const username = document.getElementById('username').value;
-          const password = document.getElementById('password').value;
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-          if (username && password) { // Simple validation
-              setLoggedInState(true,username);
-              loginModal.hide();
-              updateProfileUI();
-          } else {
-              alert('Please enter valid credentials.');
-          }
-      });
-  } else {
-      const username = getUsername();
-      // Display logout confirmation if logged in
-      const logoutHTML = `
-          <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title">Profile Information</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                      </div>
-                      <div class="modal-body d-flex flex-column justify-content-center align-items-center">
-                          <h2><strong>${username}</strong></h2>
-                          <button type="submit" class="btn btn-primary" id="orderHistory">Order History</button>
-                          <button class="btn btn-danger" id="confirmLogout">Logout</button>
-                      </div>
-                  </div>
-              </div>
-          </div>`;
-      document.body.insertAdjacentHTML('beforeend', logoutHTML);
+            if (username && password) {
+                setLoggedInState(true, username);
+                loginModal.hide();
+                loginModal._element.addEventListener('hidden.bs.modal', () => {
+                    loginModal._element.remove();
+                });
+                updateProfileUI();
+            } else {
+                alert('Please enter valid credentials.');
+            }
+        });
+    } else {
+        const username = getUsername();
+        const logoutHTML = `
+            <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Profile Information</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                            <h2><strong>${username}</strong></h2>
+                            <button type="submit" class="btn btn-primary" id="orderHistory">Order History</button>
+                            <button class="btn btn-danger" id="confirmLogout">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        document.body.insertAdjacentHTML('beforeend', logoutHTML);
 
-      const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
-      logoutModal.show();
+        const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+        logoutModal.show();
 
-      document.getElementById('confirmLogout').addEventListener('click', () => {
-          setLoggedInState(false);
-          logoutModal.hide();
-          updateProfileUI();
-      });
+        document.getElementById('confirmLogout').addEventListener('click', () => {
+            setLoggedInState(false);
+            logoutModal.hide();
+            logoutModal._element.addEventListener('hidden.bs.modal', () => {
+                logoutModal._element.remove();
+            });
+            updateProfileUI();
+        });
 
-      document.getElementById('orderHistory').addEventListener('click', () => {
-          logoutModal.hide();
-          //redirect to order history page
-          window.location.href = '/order-history/index.html';
-      });
-      
-  }
+        document.getElementById('orderHistory').addEventListener('click', () => {
+            logoutModal.hide();
+            window.location.href = '/order-history/index.html';
+        });
+    }
 }
+
 
 //profile JS
 function login(){

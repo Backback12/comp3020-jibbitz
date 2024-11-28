@@ -240,10 +240,8 @@ function updateProfileUI() {
     }
 }
 
-// Login Popup
 function loginPopup() {
     if (!isLoggedIn()) {
-        // Display login form if not logged in
         const loginFormHTML = `
             <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -275,13 +273,15 @@ function loginPopup() {
 
         document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            // Perform login logic here (e.g., validate credentials)
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            if (username && password) { // Simple validation
-                setLoggedInState(true,username);
+            if (username && password) {
+                setLoggedInState(true, username);
                 loginModal.hide();
+                loginModal._element.addEventListener('hidden.bs.modal', () => {
+                    loginModal._element.remove();
+                });
                 updateProfileUI();
             } else {
                 alert('Please enter valid credentials.');
@@ -289,7 +289,6 @@ function loginPopup() {
         });
     } else {
         const username = getUsername();
-        // Display logout confirmation if logged in
         const logoutHTML = `
             <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -314,17 +313,19 @@ function loginPopup() {
         document.getElementById('confirmLogout').addEventListener('click', () => {
             setLoggedInState(false);
             logoutModal.hide();
+            logoutModal._element.addEventListener('hidden.bs.modal', () => {
+                logoutModal._element.remove();
+            });
             updateProfileUI();
         });
 
         document.getElementById('orderHistory').addEventListener('click', () => {
             logoutModal.hide();
-            //redirect to order history page
             window.location.href = '/order-history/index.html';
         });
-        
     }
 }
+
 
 //profile JS
 function login(){
