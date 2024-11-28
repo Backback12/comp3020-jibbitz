@@ -186,6 +186,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const suggestionsBox = document.getElementById("suggestionsBox");
     const searchIcon = document.getElementById("searchIcon");
+    updateProfileUI();
+    generateProductGrid();
+    updateCartCount();
+    //added this
+    attachFilterListeners();
+    login();
 
 
     searchInput.addEventListener("input", () => {
@@ -319,19 +325,7 @@ function showNotification(message) {
   }, 3000);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  updateProfileUI();
-  generateProductGrid();
-  updateCartCount();
 
-  const searchInput = document.querySelector('input[type="text"]');
-  if (searchInput) {
-      searchInput.addEventListener('input', handleSearch);
-  }
-  //added this
-  attachFilterListeners();
-  login();
-});
 
 //TRYING TO MAKE THE FILTERS CHANGE THE PRODUCTS DISPLAYING-SHANA
 function handleFilters(){
