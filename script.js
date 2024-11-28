@@ -538,7 +538,7 @@ cartIcon.addEventListener('mouseleave', () => {
     cartPreview.style.display = 'none';
 });
 
-// Optional: View Cart button to redirect to the cart page
+// View Cart button to redirect to the cart page
 document.getElementById('viewCartButton').addEventListener('click', () => {
     window.location.href = '/cart'; // Redirect to the cart page
 });

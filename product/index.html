@@ -15,9 +15,14 @@
         <div class="container">
             <a class="navbar-brand" href="/">Jibbitz</a>
             <div class="d-flex align-items-center">
-                <a href="/cart/" class="position-relative me-4 text-decoration-none text-dark">
+                <a href="/cart/" class="position-relative me-4 text-decoration-none text-dark" id="cartIcon">
                     <i class="fas fa-shopping-cart fa-lg"></i>
                     <span class="cart-count" id="cartCount">0</span>
+                    <div id="cartPreview" class="cart-preview" style="display: none;">
+                        <ul id="cartItemsList"></ul>
+                        <div id="cartSubtotal"></div>
+                        <button class="btn btn-primary" id="viewCartButton">View Cart</button>
+                    </div>
                 </a>
                 <!--Added id name here for PROFILE-->
                 <div class="profile-icon" id = "profile">

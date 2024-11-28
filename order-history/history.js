@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const ordersContainer = document.getElementById('ordersContainer');
-  login()
-  updateProfileUI()
+  login();
+  updateProfileUI();
+  initCartPreview();
   
   // Retrieve username from localStorage
   const username = getUsername();
@@ -169,3 +170,61 @@ function login(){
       profile.addEventListener('click', loginPopup);
   }
 }
+
+// Initialize cart preview hover functionality
+function initCartPreview() {
+  console.log("CALLED")
+  const cartIcon = document.getElementById('cartIcon');
+  const cartPreview = document.getElementById('cartPreview');
+
+  if (cartIcon && cartPreview) {
+      cartIcon.addEventListener('mouseenter', () => {
+          console.log("Mouse entered the cart icon.");
+          updateCartPreview();
+          cartPreview.style.display = 'block';
+      });
+
+      cartIcon.addEventListener('mouseleave', () => {
+          cartPreview.style.display = 'none';
+      });
+  }
+}
+
+// Update cart preview based on cart data
+function updateCartPreview() {
+  const cartPreview = document.getElementById('cartPreview');
+  const cartItemsList = document.getElementById('cartItemsList');
+  const cartSubtotal = document.getElementById('cartSubtotal');
+  const cart = JSON.parse(localStorage.getItem('cart')) || []
+  
+  // Clear the cart items list
+  cartItemsList.innerHTML = '';
+
+  // Initialize subtotal
+  let subtotal = 0;
+
+  // Loop through the cart and add items to the preview
+  cart.forEach(item => {
+      const itemSubtotal = item.quantity * item.price;
+      subtotal += itemSubtotal;
+
+      // Create the list item
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+          <img src="${item.images[0]}" alt="${item.name}" />
+          <span>${item.name}</span>
+          <span>Qty: ${item.quantity}</span>
+          <span>$${itemSubtotal.toFixed(2)}</span>
+      `;
+      cartItemsList.appendChild(listItem);
+  });
+
+  // Display the subtotal
+  cartSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+}
+
+
+
+
+
+
