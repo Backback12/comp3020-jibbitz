@@ -434,3 +434,54 @@ function login(){
         profile.addEventListener('click', loginPopup);
     }
 }
+
+// Update cart preview based on cart data
+function updateCartPreview() {
+    const cartPreview = document.getElementById('cartPreview');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    
+    // Clear the cart items list
+    cartItemsList.innerHTML = '';
+
+    // Initialize subtotal
+    let subtotal = 0;
+
+    // Loop through the cart and add items to the preview
+    cart.forEach(item => {
+        const itemSubtotal = item.quantity * item.price;
+        subtotal += itemSubtotal;
+
+        // Create the list item
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <img src="${item.images[0]}" alt="${item.name}" />
+            <span>${item.name}</span>
+            <span>Qty: ${item.quantity}</span>
+            <span>$${itemSubtotal.toFixed(2)}</span>
+        `;
+        cartItemsList.appendChild(listItem);
+    });
+
+    // Display the subtotal
+    cartSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+}
+
+// Show the cart preview when hovering over the cart icon
+const cartIcon = document.getElementById('cartIcon');
+const cartPreview = document.getElementById('cartPreview');
+
+cartIcon.addEventListener('mouseenter', () => {
+    updateCartPreview(); // Update the cart preview
+    cartPreview.style.display = 'block';
+});
+
+// Hide the cart preview when the mouse leaves the cart icon
+cartIcon.addEventListener('mouseleave', () => {
+    cartPreview.style.display = 'none';
+});
+
+// Optional: View Cart button to redirect to the cart page
+document.getElementById('viewCartButton').addEventListener('click', () => {
+    window.location.href = '/cart'; // Redirect to the cart page
+});

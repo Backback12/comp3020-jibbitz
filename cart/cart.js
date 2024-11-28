@@ -176,6 +176,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function clearCart() {
+    // Save the current cart as an order (if the user is logged in)
+    if (isLoggedIn()) {
+        const username = getUsername();
+        const order = {
+            username: username,
+            items: JSON.parse(JSON.stringify(cart)) // Clone the cart to save it as an order
+        };
+    
+        // Store the order in localStorage
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders.push(order);
+        localStorage.setItem('orders', JSON.stringify(orders));
+    }
+    
     // Clear the cart array
     cart = [];
 
