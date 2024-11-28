@@ -181,19 +181,79 @@ function generateProductGrid() {
   `).join('');
 }
 
-function handleSearch(event) {
-  const searchTerm = event.target.value.toLowerCase();
-  const productCards = document.querySelectorAll('.col-md-3');
+//search functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const suggestionsBox = document.getElementById("suggestionsBox");
+    const searchIcon = document.getElementById("searchIcon");
 
-  productCards.forEach(card => {
-      const productName = card.querySelector('h5').textContent.toLowerCase();
-      if (productName.includes(searchTerm)) {
-          card.style.display = 'block';
-      } else {
-          card.style.display = 'none';
-      }
-  });
-}
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        suggestionsBox.innerHTML = ''; 
+
+        if (query) {
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(query)
+            );
+
+            if (filteredProducts.length) {
+                suggestionsBox.style.display = 'block'; 
+                const ul = document.createElement('ul');
+                filteredProducts.forEach(product => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<img src="${product.images[0]}" alt="${product.name}" style="width: 70px; height: 70px;"> ${product.name}`;
+                    li.addEventListener("click", () => {
+                        window.location.href = `/product/?id=${product.id}`; 
+                    });
+                    ul.appendChild(li);
+                });
+                suggestionsBox.appendChild(ul);
+            } else {
+                suggestionsBox.style.display = 'none'; 
+            }
+        } else {
+            suggestionsBox.style.display = 'none'; 
+        }
+    });
+
+
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            displaySearchResults(searchInput.value);
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    searchIcon.addEventListener("click", () => {
+        displaySearchResults(searchInput.value);
+        suggestionsBox.style.display = 'none'; 
+    });
+
+    function displaySearchResults(query) {
+        const filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+        const productGrid = document.getElementById("productGrid");
+        productGrid.innerHTML = ''; 
+
+        filteredProducts.forEach(product => {
+            const div = document.createElement("div");
+            div.classList.add("col-md-4", "mb-4");
+            div.innerHTML = `
+                <div class="card">
+                    <img src="${product.images[0]}" class="card-img-top" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <a href="/product/?id=${product.id}" class="btn btn-primary">View Product</a>
+                    </div>
+                </div>
+            `;
+            productGrid.appendChild(div);
+        });
+    }
+});
 
 // click product link and open product page
 function linkToProduct(event, id) {
