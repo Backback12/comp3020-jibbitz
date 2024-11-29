@@ -7,14 +7,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="/styles.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
 
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/">Jibbitz</a>
+            <a class="navbar-brand" href="../index.html">Jibbitz</a>
             <div class="d-flex align-items-center">
                 <a href="/cart/" class="position-relative me-4 text-decoration-none text-dark" id="cartIcon">
                     <i class="fas fa-shopping-cart fa-lg"></i>
@@ -27,7 +27,7 @@
                 </a>
                 <!--Added id name here for PROFILE-->
                 <div class="profile-icon" id = "profile">
-                    <img src="/images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
+                    <img src="../images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
                 </div>
             </div>
         </div>
@@ -142,8 +142,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
-    <script src="/product/product.js"></script>
+    <script src="../script.js"></script>
+    <script src="../product/product.js"></script>
 <script>
 // write a review
 function updateReviewRating() {
@@ -176,6 +176,25 @@ function submitReview() {
     reviewRatingRange.value = 5;
     updateReviewRating();
     reviewComments.value = "";
+
+
+    var customReviews = {};
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = Number(urlParams.get('id'));
+
+    // customReviews = localStorage.getItem('reviews');
+    customReviews = JSON.parse(localStorage.getItem('reviews') || '{}');
+
+    if (id in customReviews) {
+        // Append to the array of reviews for this product
+        customReviews[id].push({ name: reviewName, comment: comments, rating: rating });
+    } else {
+        // Initialize an array with the new review
+        customReviews[id] = [{ name: reviewName, comment: comments, rating: rating }];
+    }
+
+    localStorage.setItem('reviews', JSON.stringify(customReviews));
+    console.log('set review');
 
 }
 </script>

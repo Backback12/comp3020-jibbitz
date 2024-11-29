@@ -43,20 +43,40 @@ document.addEventListener('DOMContentLoaded', () => {
       // reviewsList.appendChild(addReview(products[id]['reviews'][i]['name'], products[id]['reviews'][i]['comment'], products[id]['reviews'][i]['rating']))
       reviewsList.insertBefore(addReview(products[id]['reviews'][i]['name'], products[id]['reviews'][i]['comment'], products[id]['reviews'][i]['rating']), reviewsList.children[reviewsList.childElementCount-1]);
     }
+    // IMPORT CUSTOM LOCAL STORAGE MESSAGES
+    // if (localStorage.getItem('reviews') != null) {
+    if ('reviews' in localStorage) {
+        
+        var customReviews = {};
+
+        // customReviews = localStorage.getItem('reviews');
+        customReviews = JSON.parse(localStorage.getItem('reviews') || '{}');
+        console.log(customReviews);
+        console.log(` IS ID ${id} in ${customReviews} ??/?`);
+        if (String(id) in customReviews) {
+            console.log(` IS ID ${id} in ${customReviews} ??/?`);
+            for (var i = 0; i < customReviews[id].length; i++) {
+                reviewsList.insertBefore(addReview(customReviews[id][i]['name'], customReviews[id][i]['comment'], customReviews[id][i]['rating']), reviewsList.children[reviewsList.childElementCount-1]);
+            }
+        }
+        else {
+            console.log("WTF")
+        }
+    }
 
 
     // if logged in, show "POST REVIEW"
     const createReview = document.getElementById('create-review');
     if (isLoggedIn()) {
       // document.getElementById('create-review').style.visibility = "visible";
-      console.log('you logged in ', createReview);
+    //   console.log('you logged in ', createReview);
       // createReview.style.display = 'block !important';
       createReview.classList.add('d-flex');
       createReview.classList.remove('d-none');
     }
     else {
       // document.getElementById('create-review').style.visibility = "hidden";
-      console.log('noooooo ', createReview);
+    //   console.log('noooooo ', createReview);
       // createReview.style.display = 'none !important';
       createReview.classList.add('d-none');
       createReview.classList.remove('d-flex');
