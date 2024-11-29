@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         else {
-            console.log("WTF")
+            // no reviews in local storage
         }
     }
 
