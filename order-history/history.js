@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   login();
   updateProfileUI();
   initCartPreview();
+  updateCartBadge();
   
   // Retrieve username from localStorage
   const username = getUsername();
@@ -24,11 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <ul class="list-group">
           ${order.items.map(item => `
             <li class="list-group-item">
-              ${item.name} - ${item.quantity} x $${item.price.toFixed(2)}
+              <span class="item-name">${item.name}</span>
+              <span class="item-quantity">Qty: ${item.quantity}</span>
+              <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
             </li>
           `).join('')}
         </ul>
-        <p><strong>Total: $${(order.items.reduce((sum, item) => sum + (item.price * item.quantity), 0)).toFixed(2)}</strong></p>
+        <p>Shipping: $4.99</p>
+        <p><strong>Total: $${(order.items.reduce((sum, item) => sum + 4.99+(item.price * item.quantity), 0)).toFixed(2)}</strong></p>
       </div>
     `).join('');
   }
@@ -222,6 +226,19 @@ function updateCartPreview() {
   // Display the subtotal
   cartSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
 }
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // sum the quantities of all items
+  console.log(cartItemCount);
+
+  if (cartCount) {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+  }
+}
+
+
 
 
 
