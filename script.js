@@ -67,7 +67,7 @@ const products = [
         colour: "Orange",
         rating: 10,
         orders: 302,
-        reviews: [{name: "Connor_Pagtakhan", comment: "My kids adore these!", rating: 10}, {name: "LazySoles", comment: "My kids adore these!", rating: 8}, {name: "crocs-Fan88", comment: "This one’s a conversation starter for sure!", rating: 9}, {name: "MayaTrekker", comment: "These are super cute!", rating: 9}, {name: "aqua.stroll99", comment: "nice item!! would get again", rating: 10}, {name: "SoleStride_", comment: "Really sturdy, even after hiking in my Crocs 🥾.", rating: 8}, {name: "wander_88", comment: "Matches my style perfectly.", rating: 8}, {name: "beach.breeze24", comment: "", rating: 10}, {name: "urban_steps_12", comment: "Great quality for the price.", rating: 9}, {name: "MellowMiles44", comment: "This one’s a conversation starter for sure!", rating: 8}, {name: "LilaLoafers", comment: "my favourite", rating: 8}]
+        reviews: [{name: "Connor_Pagtakhan", comment: "My kids adore these!", rating: 10}, {name: "LazySoles", comment: "My kids adore these!", rating: 8}, {name: "crocs-Fan88", comment: "This one’s a conversation starter for sure!", rating: 9}, {name: "MayaTrekker", comment: "These are super cute!", rating: 9}, {name: "aqua.stroll99", comment: "nice item!! would get again", rating: 10}, {name: "SoleStride_", comment: "Really sturdy, even after hiking in my Crocs 🥾.", rating: 8}, {name: "wander_88", comment: "Matches my style perfectly.", rating: 8}, {name: "beach.breeze24", comment: "Nice", rating: 10}, {name: "urban_steps_12", comment: "Great quality for the price.", rating: 9}, {name: "MellowMiles44", comment: "This one’s a conversation starter for sure!", rating: 8}, {name: "LilaLoafers", comment: "my favourite", rating: 8}]
     },
     {
         id: 8,
@@ -107,7 +107,7 @@ const products = [
         colour: "Red",
         rating: 9,
         orders: 540,
-        reviews: [{name: "MayaTrekker", comment: "This one’s a conversation starter for sure!", rating: 10}, {name: "croczoned", comment: "this is pretty cool", rating: 9}, {name: "BennySteps", comment: "Highly recommend to any Crocs lover!", rating: 8}, {name: "TylerTreads", comment: "this is pretty cool", rating: 10}, {name: "beach.breeze24", comment: "Great quality for the price.", rating: 9}, {name: "Soft_Steps", comment: "These are super cute!", rating: 10}, {name: "ComfySteps_21", comment: "nice item!! would get again", rating: 8}, {name: "Stroll_Freak", comment: "", rating: 9}, {name: "SoftSoles", comment: "🌼 The colors are brighter than I expected—pleasant surprise!", rating: 8}]
+        reviews: [{name: "MayaTrekker", comment: "This one’s a conversation starter for sure!", rating: 10}, {name: "croczoned", comment: "this is pretty cool", rating: 9}, {name: "BennySteps", comment: "Highly recommend to any Crocs lover!", rating: 8}, {name: "TylerTreads", comment: "this is pretty cool", rating: 10}, {name: "beach.breeze24", comment: "Great quality for the price.", rating: 9}, {name: "Soft_Steps", comment: "These are super cute!", rating: 10}, {name: "ComfySteps_21", comment: "nice item!! would get again", rating: 8}, {name: "Stroll_Freak", comment: "cool", rating: 9}, {name: "SoftSoles", comment: "🌼 The colors are brighter than I expected—pleasant surprise!", rating: 8}]
     },
     {
         id: 12,

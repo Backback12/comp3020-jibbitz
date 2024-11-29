@@ -23,8 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                                         + '<i class="bi bi-star-fill"></i>'.repeat(Math.floor(rating/2))  // full stars 
                                                         + '<i class="bi bi-star-half"></i>'.repeat(rating % 2)            // half stars
                                                         + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
-    // set image (temp)
-    document.getElementById('product-img').src = '../' + products[id]['images'][0];
+    
+    // set product rating count
+    document.getElementById('product-rating-count').innerHTML = Math.floor(Number(products[id]['orders']) / 4) + ' Ratings'
+    
+                                                        // set image (temp)
+    // document.getElementById('product-img').src = '../' + products[id]['images'][0];
+    document.getElementById('prod-img-1').src = '../' + products[id]['images'][0];
+    document.getElementById('prod-img-2').src = '../' + products[id]['images'][1];
     // document.getElementById('img-container').innerHTML = 
     
     const quantity_input = document.getElementById('product-quantity');
