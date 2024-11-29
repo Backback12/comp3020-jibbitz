@@ -68,7 +68,7 @@ function generateCartItems() {
                 <i class="fas fa-shopping-cart"></i>
                 <h3>Your cart is empty</h3>
                 <p>Add some items to your cart and they will appear here.</p>
-                <a href="/index.html" class="btn btn-primary mt-3">Continue Shopping</a>
+                <a href="../index.html" class="btn btn-primary mt-3">Continue Shopping</a>
             </div>`;
         updateCartTotals();
         return;
@@ -227,8 +227,8 @@ function setLoggedInState(state, username) {
 
 // Update profile image based on login state
 function updateProfileUI() {
-    const defaultProfilePic = "/images/defaultProfileIcon.png";
-    const loggedInProfilePic = "/images/loggedInProfile.jpg";
+    const defaultProfilePic = "../images/defaultProfileIcon.png";
+    const loggedInProfilePic = "../images/loggedInProfile.jpg";
     const profileIcon = document.querySelector('#profile img');
     if (!profileIcon) return;
 

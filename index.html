@@ -7,17 +7,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <link href="/styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet"> <!-- Fixed this path -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css">
-    <link href="search/search.css" rel="stylesheet">
+    <link href="search/search.css" rel="stylesheet"> <!-- Already correct -->
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/">Jibbitz</a>
+            <a class="navbar-brand" href="#">Jibbitz</a>
             <div class="d-flex align-items-center">
-                <a href="/cart/" class="position-relative me-4 text-decoration-none text-dark" id="cartIcon">
+                <a href="./cart/index.html" class="position-relative me-4 text-decoration-none text-dark" id="cartIcon">
                     <i class="fas fa-shopping-cart fa-lg"></i>
                     <span class="cart-count" id="cartCount">0</span>
                     <div id="cartPreview" class="cart-preview" style="display: none;">
@@ -30,7 +31,7 @@
                 
                 <!--Added id name here for PROFILE-->
                 <div class="profile-icon" id = "profile">
-                    <img src="/images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
+                    <img src="./images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
                 </div>
             </div>
         </div>
@@ -137,7 +138,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
 </body>
 </html>

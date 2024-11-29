@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Rainbow Jibbitz",
         price: 4.99,
-        images: ["/images/rainbowJibbit.png", "/images/rainbowOnCroc.png"],
+        images: ["./images/rainbowJibbit.png", "./images/rainbowOnCroc.png"],
         colour: "Multicoloured",
         rating: 9,
         orders: 512,
@@ -13,7 +13,7 @@ const products = [
         id: 2,
         name: "Star Jibbitz",
         price: 3.99,
-        images: ["/images/starJibbit.png", "/images/starOnCroc.png"],
+        images: ["./images/starJibbit.png", "./images/starOnCroc.png"],
         colour: "Yellow",
         rating: 8,
         orders: 383,
@@ -23,7 +23,7 @@ const products = [
         id: 3,
         name: "Heart Jibbitz",
         price: 4.49,
-        images: ["/images/heartJibbit.png", "/images/heartOnCroc.png"],
+        images: ["./images/heartJibbit.png", "./images/heartOnCroc.png"],
         colour: "Red",
         rating: 10,
         orders: 925,
@@ -33,7 +33,7 @@ const products = [
         id: 4,
         name: "Flower Jibbitz",
         price: 3.99,
-        images: ["/images/flowerJibbit.png", "/images/flowerOnCroc.png"],
+        images: ["./images/flowerJibbit.png", "./images/flowerOnCroc.png"],
         colour: "Pink",
         rating: 9,
         orders: 633,
@@ -43,7 +43,7 @@ const products = [
         id: 5,
         name: "Soccer Ball Jibbitz",
         price: 5.49,
-        images: ["/images/soccerJibbit.png", "/images/soccerOnCroc.png"],
+        images: ["./images/soccerJibbit.png", "./images/soccerOnCroc.png"],
         colour: "Multicoloured",
         rating: 4,
         orders: 85,
@@ -53,7 +53,7 @@ const products = [
         id: 6,
         name: "Stitch Jibbitz",
         price: 5.99,
-        images: ["/images/stitchJibbit.png", "/images/stitchOnCroc.png"],
+        images: ["./images/stitchJibbit.png", "./images/stitchOnCroc.png"],
         colour: "Blue",
         rating: 7,
         orders: 104,
@@ -63,7 +63,7 @@ const products = [
         id: 7,
         name: "Charmander Jibbitz",
         price: 5.99,
-        images: ["/images/charmanderJibbit.png", "/images/charmanderOnCroc.png"],
+        images: ["./images/charmanderJibbit.png", "./images/charmanderOnCroc.png"],
         colour: "Orange",
         rating: 10,
         orders: 302,
@@ -73,7 +73,7 @@ const products = [
         id: 8,
         name: "Alien Jibbitz",
         price: 3.49,
-        images: ["/images/alienJibbit.png", "/images/alienOnCroc.png"],
+        images: ["./images/alienJibbit.png", "./images/alienOnCroc.png"],
         colour: "Green",
         rating: 8,
         orders: 221,
@@ -83,7 +83,7 @@ const products = [
         id: 9,
         name: "Dino Jibbitz",
         price: 5.99,
-        images: ["/images/dinoJibbit.png", "/images/dinoOnCroc.png"],
+        images: ["./images/dinoJibbit.png", "./images/dinoOnCroc.png"],
         colour: "Purple",
         rating: 9,
         orders: 245,
@@ -93,7 +93,7 @@ const products = [
         id: 10,
         name: "Spongebob Jibbitz",
         price: 4.99,
-        images: ["/images/spongebobJibbit.png", "/images/spongebobOnCroc.png"],
+        images: ["./images/spongebobJibbit.png", "./images/spongebobOnCroc.png"],
         colour: "Yellow",
         rating: 8,
         orders: 297,
@@ -103,7 +103,7 @@ const products = [
         id: 11,
         name: "Spiderman Jibbitz",
         price: 3.99,
-        images: ["/images/spidermanJibbit.png", "/images/spidermanOnCroc.png"],
+        images: ["./images/spidermanJibbit.png", "./images/spidermanOnCroc.png"],
         colour: "Red",
         rating: 9,
         orders: 540,
@@ -113,7 +113,7 @@ const products = [
         id: 12,
         name: "Shark Jibbitz",
         price: 3.49,
-        images: ["/images/sharkJibbit.png", "/images/sharkOnCroc.png"],
+        images: ["./images/sharkJibbit.png", "./images/sharkOnCroc.png"],
         colour: "Blue",
         rating: 6,
         orders: 171,
@@ -123,7 +123,7 @@ const products = [
         id: 13,
         name: "Trex Jibbitz",
         price: 3.49,
-        images: ["/images/trexJibbit.png", "/images/trexOnCroc.png"],
+        images: ["./images/trexJibbit.png", "./images/trexOnCroc.png"],
         colour: "Green",
         rating: 5,
         orders: 140,
@@ -133,7 +133,7 @@ const products = [
         id: 14,
         name: "Seahorse Jibbitz",
         price: 4.49,
-        images: ["/images/seahorseJibbit.png", "/images/seahorseOnCroc.png"],
+        images: ["./images/seahorseJibbit.png", "./images/seahorseOnCroc.png"],
         colour: "Pink",
         rating: 4,
         orders: 73,
@@ -143,7 +143,7 @@ const products = [
         id: 15,
         name: "Rainbow Flower Jibbitz",
         price: 5.49,
-        images: ["/images/rainbowFlowerJibbit.png", "/images/rainbowFlowerOnCroc.png"],
+        images: ["./images/rainbowFlowerJibbit.png", "./images/rainbowFlowerOnCroc.png"],
         colour: "Multicoloured",
         rating: 6,
         orders: 132,
@@ -153,7 +153,7 @@ const products = [
         id: 16,
         name: "Fireman Jibbitz",
         price: 4.29,
-        images: ["/images/firemanJibbit.png", "images/firemanOnCroc.png"],
+        images: ["./images/firemanJibbit.png", "./images/firemanOnCroc.png"],
         colour: "Red",
         rating: 8,
         orders: 255,
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const li = document.createElement('li');
                     li.innerHTML = `<img src="${product.images[0]}" alt="${product.name}" style="width: 70px; height: 70px;"> ${product.name}`;
                     li.addEventListener("click", () => {
-                        window.location.href = `/product/?id=${product.id}`; 
+                        window.location.href = `./product/?id=${product.id}`; 
                     });
                     ul.appendChild(li);
                 });
@@ -419,8 +419,8 @@ function getUsername() {
 
 // Update profile image based on login state
 function updateProfileUI() {
-    const defaultProfilePic = "images/defaultProfileIcon.png";
-    const loggedInProfilePic = "images/loggedInProfile.jpg";
+    const defaultProfilePic = "./images/defaultProfileIcon.png";
+    const loggedInProfilePic = "./images/loggedInProfile.jpg";
     const profileIcon = document.querySelector('#profile img');
     if (!profileIcon) return;
 
