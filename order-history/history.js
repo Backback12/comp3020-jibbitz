@@ -62,8 +62,8 @@ function setLoggedInState(state, username) {
 
 // Update profile image based on login state
 function updateProfileUI() {
-  const defaultProfilePic = "/images/defaultProfileIcon.png";
-  const loggedInProfilePic = "/images/loggedInProfile.jpg";
+  const defaultProfilePic = "../images/defaultProfileIcon.png";
+  const loggedInProfilePic = "../images/loggedInProfile.jpg";
   const profileIcon = document.querySelector('#profile img');
   if (!profileIcon) return;
 

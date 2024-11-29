@@ -78,7 +78,7 @@ function generateCartItems() {
         <div class="cart-item">
             <div class="row align-items-center">
                 <div class="col-2">
-                    <img src="${item.images[0]}" class="cart-item-image" alt="${item.name}">
+                    <img src=".${item.images[0]}" class="cart-item-image" alt="${item.name}">
                 </div>
                 <div class="col">
                     <h5>${item.name}</h5>
@@ -321,7 +321,7 @@ function loginPopup() {
 
         document.getElementById('orderHistory').addEventListener('click', () => {
             logoutModal.hide();
-            window.location.href = './order-history/index.html';
+            window.location.href = '../order-history/index.html';
         });
     }
 }
