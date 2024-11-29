@@ -513,7 +513,7 @@ function loginPopup() {
 
         document.getElementById('orderHistory').addEventListener('click', () => {
             logoutModal.hide();
-            window.location.href = '/order-history/index.html';
+            window.location.href = './order-history/index.html';
         });
     }
 }
