@@ -242,13 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-            displaySearchResults(searchInput.value);
+            //displaySearchResults(searchInput.value);
             suggestionsBox.style.display = 'none';
         }
     });
 
     searchIcon.addEventListener("click", () => {
-        displaySearchResults(searchInput.value);
+        //displaySearchResults(searchInput.value);
         suggestionsBox.style.display = 'none'; 
     });
 
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filteredProducts.forEach(product => {
             const div = document.createElement("div");
-            div.classList.add("col-md-4", "mb-4");
+            div.classList.add("col-md-3", "mb-4");
             div.innerHTML = `
                 <div class="card">
                     <img src="${product.images[0]}" class="card-img-top" alt="${product.name}">
