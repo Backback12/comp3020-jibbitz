@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const li = document.createElement('li');
                     li.innerHTML = `<img src="${product.images[0]}" alt="${product.name}" style="width: 70px; height: 70px;"> ${product.name}`;
                     li.addEventListener("click", () => {
-                        window.location.href = `./product/?id=${product.id}`; 
+                        window.location.href = `./product/index.html?id=${product.id}`; 
                     });
                     ul.appendChild(li);
                 });
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="${product.images[0]}" class="card-img-top" alt="${product.name}">
                     <div class="card-body">
                         <h5 class="card-title">${product.name}</h5>
-                        <a href="/product/?id=${product.id}" class="btn btn-primary">View Product</a>
+                        <a href="./product/index.html?id=${product.id}" class="btn btn-primary">View Product</a>
                     </div>
                 </div>
             `;
@@ -283,7 +283,7 @@ function linkToProduct(event, id) {
   if (event.target.tagName !== "BUTTON" && event.target.tagName !== "SPAN") {
     // console.log("CLICKED ", event.target.tagName);
 
-    window.location.href = `/product/?id=${ id }`
+    window.location.href = `./product/index.html?id=${ id }`
   }
 }
 
