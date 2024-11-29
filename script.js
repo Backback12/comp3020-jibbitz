@@ -327,30 +327,40 @@ function showNotification(message) {
 
 
 
-//TRYING TO MAKE THE FILTERS CHANGE THE PRODUCTS DISPLAYING-SHANA
-function handleFilters(){
-    //get all of the colours that are checked off
+
+function handleFilters(minPrice, maxPrice) {
     const selectedColours = Array.from(document.querySelectorAll('#colourForm .form-check-input:checked'))
         .map(checkbox => checkbox.nextElementSibling.textContent.trim().toLowerCase());
-    //print to console (FOR TESTING: REMOVE LATERE)
-    console.log(selectedColours);
-
-
-    //getting all the product cards
+    console.log('Selected Colours:', selectedColours);
     const productCards = document.querySelectorAll('.col-md-3');
-
-    //for all product cards...
-    productCards.forEach(card =>{
-        //get the colour of the card
+    productCards.forEach(card => {
         const productColour = card.getAttribute('data-colour').toLowerCase();
-        console.log("product-color",productColour);
-        //show the card if no filters are selected or if the product matches one of the selected colours
-        if (selectedColours.length === 0 || selectedColours.includes(productColour)){
-            card.style.display = 'block';
-        }
-        else{
-            card.style.display = 'none';
-        }
+        const productId = parseInt(card.getAttribute('onclick').match(/\d+/)[0], 10);
+        const product = products.find(p => p.id === productId);
+        const matchesColour = selectedColours.length === 0 || selectedColours.includes(productColour);
+        const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+        card.style.display = matchesColour && matchesPrice ? 'block' : 'none';
+    });
+}
+
+function initializePriceSlider() {
+    const priceSlider = document.getElementById('priceSlider');
+    const priceRange = document.getElementById('priceRange');
+
+    noUiSlider.create(priceSlider, {
+        start: [0, 10],        
+        connect: true,         
+        range: {              
+            min: 0,
+            max: 10
+        },
+        step: 0.5,             
+    });
+
+    priceSlider.noUiSlider.on('update', (values) => {
+        const [minPrice, maxPrice] = values.map(value => Math.round(value));
+        priceRange.textContent = `${minPrice} - ${maxPrice}`;  
+        handleFilters(minPrice, maxPrice);  
     });
 }
 
@@ -358,9 +368,19 @@ function attachFilterListeners() {
     const filterCheckboxes = document.querySelectorAll('#colourForm .form-check-input');
 
     filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', handleFilters);
+        checkbox.addEventListener('change', () => {
+            const minPrice = parseFloat(document.getElementById('priceSlider').noUiSlider.get()[0]);
+            const maxPrice = parseFloat(document.getElementById('priceSlider').noUiSlider.get()[1]);
+            handleFilters(minPrice, maxPrice);
+        });
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializePriceSlider();  // Initialize the price slider
+    attachFilterListeners();  // Attach the change event listeners to the checkboxes
+});
+
 
 // Login state management
 function isLoggedIn() {
