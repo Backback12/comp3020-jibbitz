@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                                         + '<i class="bi bi-star-half"></i>'.repeat(rating % 2)            // half stars
                                                         + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
     // set image (temp)
-    document.getElementById('product-img').src = products[id]['images'][0];
+    document.getElementById('product-img').src = '../' + products[id]['images'][0];
     // document.getElementById('img-container').innerHTML = 
     
     const quantity_input = document.getElementById('product-quantity');
@@ -64,16 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // if logged in, show "POST REVIEW"
     const createReview = document.getElementById('create-review');
     if (isLoggedIn()) {
-      // document.getElementById('create-review').style.visibility = "visible";
-    //   console.log('you logged in ', createReview);
-      // createReview.style.display = 'block !important';
       createReview.classList.add('d-flex');
       createReview.classList.remove('d-none');
     }
     else {
-      // document.getElementById('create-review').style.visibility = "hidden";
-    //   console.log('noooooo ', createReview);
-      // createReview.style.display = 'none !important';
       createReview.classList.add('d-none');
       createReview.classList.remove('d-flex');
     }
@@ -81,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   else {
     // no ID!
     // send back to main page
-    window.location.href = "/"
+    window.location.href = "../index.html"
   }
   updateProfileUI();
   login();
@@ -132,7 +126,7 @@ function addReview(name, comment, rating) {
   const reviewCard = 
   `<div class="card m-2 p-1 d-flex flex-row">
       <div class="profile-icon m-2">
-          <img src="/images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
+          <img src="../images/defaultProfileIcon.png" alt="Profile" class="rounded-circle">
       </div>
       <div class="m-2">
           <a style="font-weight: bold;">${ name }</a>
@@ -177,16 +171,24 @@ function setLoggedInState(state, username) {
 
 // Update profile image based on login state
 function updateProfileUI() {
-  const defaultProfilePic = "/images/defaultProfileIcon.png";
-  const loggedInProfilePic = "/images/loggedInProfile.jpg";
+  const defaultProfilePic = "../images/defaultProfileIcon.png";
+  const loggedInProfilePic = "../images/loggedInProfile.jpg";
   const profileIcon = document.querySelector('#profile img');
   if (!profileIcon) return;
 
+
+  const createReview = document.getElementById('create-review');
   if (isLoggedIn()) {
       profileIcon.src = loggedInProfilePic;
       console.log("Hai");
+
+      createReview.classList.add('d-flex');
+      createReview.classList.remove('d-none');
   } else {
       profileIcon.src = defaultProfilePic;
+
+      createReview.classList.add('d-none');
+      createReview.classList.remove('d-flex');
   }
 }
 
@@ -272,7 +274,7 @@ function loginPopup() {
 
         document.getElementById('orderHistory').addEventListener('click', () => {
             logoutModal.hide();
-            window.location.href = '/order-history/index.html';
+            window.location.href = '../order-history/index.html';
         });
     }
 }
@@ -326,7 +328,7 @@ function updateCartPreview() {
         // Create the list item
         const listItem = document.createElement('li');
         listItem.innerHTML = `
-            <img src="${item.images[0]}" alt="${item.name}" />
+            <img src="${'../' + item.images[0]}" alt="${item.name}" />
             <span>${item.name}</span>
             <span>Qty: ${item.quantity}</span>
             <span>$${itemSubtotal.toFixed(2)}</span>
