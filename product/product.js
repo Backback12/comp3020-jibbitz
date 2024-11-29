@@ -48,15 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('reviews' in localStorage) {
         
         var customReviews = {};
-
-        // customReviews = localStorage.getItem('reviews');
         customReviews = JSON.parse(localStorage.getItem('reviews') || '{}');
-        console.log(customReviews);
-        console.log(` IS ID ${id} in ${customReviews} ??/?`);
-        if (String(id) in customReviews) {
-            console.log(` IS ID ${id} in ${customReviews} ??/?`);
-            for (var i = 0; i < customReviews[id].length; i++) {
-                reviewsList.insertBefore(addReview(customReviews[id][i]['name'], customReviews[id][i]['comment'], customReviews[id][i]['rating']), reviewsList.children[reviewsList.childElementCount-1]);
+        
+        if (String((id+1)) in customReviews) {
+            for (var i = 0; i < customReviews[id+1].length; i++) {
+                reviewsList.insertBefore(addReview(customReviews[id+1][i]['name'], customReviews[id+1][i]['comment'], customReviews[id+1][i]['rating']), reviewsList.children[reviewsList.childElementCount-1]);
             }
         }
         else {
