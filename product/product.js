@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                                         + '<i class="bi bi-star"></i>'.repeat(Math.floor((10-rating)/2)); // no stars
     
     // set product rating count
-    document.getElementById('product-rating-count').innerHTML = Math.floor(Number(products[id]['orders']) / 4) + ' Ratings'
+    // document.getElementById('product-rating-count').innerHTML = Math.floor(Number(products[id]['orders']) / 4) + ' Ratings'
     
                                                         // set image (temp)
     // document.getElementById('product-img').src = '../' + products[id]['images'][0];
