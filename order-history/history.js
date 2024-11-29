@@ -215,7 +215,7 @@ function updateCartPreview() {
       // Create the list item
       const listItem = document.createElement('li');
       listItem.innerHTML = `
-          <img src="${item.images[0]}" alt="${item.name}" />
+          <img src=".${item.images[0]}" alt="${item.name}" />
           <span>${item.name}</span>
           <span>Qty: ${item.quantity}</span>
           <span>$${itemSubtotal.toFixed(2)}</span>
