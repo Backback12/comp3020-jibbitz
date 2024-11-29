@@ -174,7 +174,7 @@ function generateProductGrid() {
                   <div class="carousel-inner">
                       ${product.images.map((img, index) => `
                           <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                              <img src="${img}" class="d-block w-100 product-image" alt="${product.name}">
+                              <img src="${'./' + img}" class="d-block w-100 product-image" alt="${product.name}">
                           </div>
                       `).join('')}
                   </div>
