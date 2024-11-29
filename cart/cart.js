@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
     generateCartItems();
     login();
+    updateCartBadge();
 });
 
 function clearCart() {
@@ -334,6 +335,18 @@ function login(){
         profile.addEventListener('click', loginPopup);
     }
 }
+
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0); // sum the quantities of all items
+    console.log(cartItemCount);
+  
+    if (cartCount) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCount.textContent = totalItems;
+    }
+}
+  
 
 
 
