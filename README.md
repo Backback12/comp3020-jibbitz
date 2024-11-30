@@ -13,7 +13,7 @@ This is a Jibbitz website inspired by the Crocs website. The details are discuss
 
 # To Run
 1. Download and extract ```jibbitz.zip```  
-2. Navigate to the ```index.html``` folder under the main directory  
+2. Navigate to the ```index.html``` file under the main directory  
 3. Open ```index.html``` in Chrome or any browser run the project.  
 
 
