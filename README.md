@@ -3,18 +3,27 @@ December 29, 2024
 Comp 3020 Milestone 3
 Group 3
 
-Shana Iqbal (7970654, iqbals5@myumanitoba.ca)
-Connor Pagtakhan (7917687, pagtakhc@myumanitoba.ca)
-Raj Rathod (7901691, rathodrd@myumanitoba.ca)
-Ethan Rojas (7916252, rojase1@myumanitoba.ca)
+Shana Iqbal (7970654, iqbals5@myumanitoba.ca)  
+Connor Pagtakhan (7917687, pagtakhc@myumanitoba.ca)  
+Raj Rathod (7901691, rathodrd@myumanitoba.ca)  
+Ethan Rojas (7916252, rojase1@myumanitoba.ca)  
 
-About: This is a Jibbitz website inspired by the Crocs website. The details are discussed below.
+# About 
+This is a Jibbitz website inspired by the Crocs website. The details are discussed below.
 
-TO RUN:
-There should be an index.html file outside of all of the other folders. Open that to start running the project.
+# To Run
+1. Download and extract ```jibbitz.zip```  
+2. Navigate to the ```index.html``` folder under the main directory  
+3. Open ```index.html``` in Chrome or any browser run the project.  
+
+
+
+# Pages
 Below are specifics on each page, should you need clarity on how to use aspects of our assignment.
 
-Navbar:
+
+
+## Navbar
 Clicking on the Jibbitz logo on the left side should bring you back to the home page regardless of where you are in the program. Clicking on the cart icon will bring you to the cart page wherever you are as well. 
 
 When you are logged out, the profile icon on the top right will be a faceless picture. If you click on it, the login popup will show.
@@ -25,7 +34,7 @@ When you hover but dont click on the cart icon, it will show you a preview of wh
 
 
 
-Homepage:
+## Homepage
 Below the navbar is a blue square box and a search bar.
 
 If you click the blue square box, the filters block will show and push the product grid so it has display room.
@@ -46,7 +55,7 @@ Each product also has 2 images. You can press the arrows on the product card to 
 
 
 
-Product Page:
+## Product Page
 This page shows the product, its ratings and reviews.
 
 You can adjust the number of products you wish to add to cart by altering the quantity in the quantity section. If you press add to cart, the product will be added to cart in the quantity specified in the quantity section.
@@ -56,12 +65,12 @@ If logged in, at the end of the reviews section there will be a panel in which y
 
 
 
-Cart Page:
+## Cart Page
 This is mainly just a display. You can edit the quantities of items here by pressing the - and + buttons. If you press the Proceed To Checkout Button, the order will be made, the cart will empty, and if you are logged in, the order should appear in the order history tab.
 
 
 
-Order History:
+## Order History
 This page is just a display. There is no functionality beyond the navbar. 
 If there are orders, they should all appear here.
 If there are none, the page will display a message saying you have no orders.
