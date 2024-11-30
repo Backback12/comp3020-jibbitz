@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userOrders = orders.filter(order => order.username === username);
   
   if (userOrders.length === 0) {
-    ordersContainer.innerHTML = '<p>No orders found.</p>';
+    ordersContainer.innerHTML = '<p class="no-orders-message">No orders found.</p>';
   } else {
     // Render orders with order number, items, and total
     ordersContainer.innerHTML = userOrders.map((order, index) => `
@@ -154,7 +154,7 @@ function loginPopup() {
           });
           updateProfileUI();
           //redirect to home page
-          window.location.href = '/index.html';
+          window.location.href = '../index.html';
       });
 
       document.getElementById('orderHistory').addEventListener('click', () => {

@@ -197,3 +197,17 @@ button:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.no-orders-message {
+    font-size: 1.5rem; /* Increase font size */
+    color: #555; /* Use a subtle gray color */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the text */
+    margin-top: 20px; /* Add some space above the message */
+    padding: 20px; /* Add padding for a more spacious look */
+    border: 2px dashed #ccc; /* Optional: dashed border for a decorative effect */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
